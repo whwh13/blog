@@ -28,9 +28,7 @@ mathjax: false
 #     weight: 1
 ---
 
-<!--more-->
-
-# 4 字符串和格式化输入/输出
+**字符串和格式化输入/输出**
 
 ```C
 #include<stdio.h>
@@ -56,6 +54,7 @@ int main(void)
     return 0;
 }
 ```
+<!--more-->
 
 ## 4.2 字符串
 

@@ -27,8 +27,6 @@ mathjax: false
 #     parent: "docs"
 #     weight: 1
 ---
-
-<!--more-->
 ## 基本数据类型
 
 ### int类型
@@ -48,6 +46,7 @@ mathjax: false
 4. 打印int值
     %d 指明在一行中整数的位置。每个 %d 应当与变量列表中的int值相对应，未对应数量会导致编译器无法识别的错误。
     例如：
+<!--more-->
 
     ```C
     printf("%d minus %d is %d\n",ten);           //遗漏了两个参数
