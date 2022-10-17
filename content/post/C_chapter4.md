@@ -1,5 +1,5 @@
 ---
-title: "C_chapter4"
+title: "C语言第四章"
 date: 2022-10-17T19:54:58+08:00
 lastmod: 2022-10-17T19:54:58+08:00
 draft: false
@@ -14,7 +14,7 @@ author: "whwh13"
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
 comment: false
-toc: false
+toc: true
 autoCollapseToc: false
 # You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
 contentCopyright: false
