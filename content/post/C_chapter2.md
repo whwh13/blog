@@ -27,6 +27,7 @@ mathjax: false
 #     parent: "docs"
 #     weight: 1
 ---
+## 转义字符
 
 转义字符以 " \ " 开始," \t "表示Tab，" \b "表示Backspace，" \n "表示换行
 "%d"名为占位符号，用于指明变量的位置
