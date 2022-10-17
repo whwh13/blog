@@ -12,6 +12,10 @@ categories = [
     "Development",
     "index",
 ]
+menu:
+  main:
+    parent: "docs"
+    weight: 5
 +++
 
 ## Contributing to Jane

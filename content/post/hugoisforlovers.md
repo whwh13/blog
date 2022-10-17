@@ -13,6 +13,11 @@ categories = [
     "golang",
     "index",
 ]
+
+menu:
+  main:
+    parent: "docs"
+    weight: 5
 +++
 
 ## Step 1. Install Hugo

@@ -5,6 +5,11 @@ lastmod: 2018-03-04T16:01:23+08:00
 draft: false
 tags: ["preview", "shortcodes", "tag-6"]
 categories: ["docs", "shortcodes", "index"]
+
+menu:
+  main:
+    parent: "docs"
+    weight: 5
 ---
 
 ## normal use

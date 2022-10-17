@@ -14,6 +14,10 @@ categories = [
     "golang",
     "index",
 ]
+menu:
+  main:
+    parent: "docs"
+    weight: 5
 +++
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

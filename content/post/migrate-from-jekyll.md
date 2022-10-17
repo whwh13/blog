@@ -14,6 +14,11 @@ categories: [
     "golang",
     "index",
 ]
+
+menu:
+  main:
+    parent: "docs"
+    weight: 5
 ---
 
 ## Move static content to `static`
