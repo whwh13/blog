@@ -52,10 +52,6 @@ defaultContentLanguage = "zh-cn"           # Default language to use
   weight = 40
   identifier = "categories"
   pageref = "/categories/"
-[[menu.main]]
-  name = "Linux101"
-  weight = 50
-  pageref = "https://linux101.whwh13.tk/"
 
 
 [params]
