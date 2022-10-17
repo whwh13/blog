@@ -7,10 +7,6 @@ tags: ["footnote", "markdown", "tag-11"]
 categories: ["docs", "index"]
 author: "xianmin"
 
-menu:
-  main:
-    parent: "docs"
-    weight: 5
 ---
 
 Hugo-theme-jane optimized for footnote. When you mouse hover the footnote[^example] , footnote content will be displayed.
