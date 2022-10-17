@@ -55,7 +55,7 @@ defaultContentLanguage = "zh-cn"           # Default language to use
 [[menu.main]]
   name = "Linux101"
   weight = 50
-  pageref = "https://linux101.whwh13.tk"
+  pageref = "https://linux101.whwh13.tk/"
 
 
 [params]
@@ -90,15 +90,15 @@ defaultContentLanguage = "zh-cn"           # Default language to use
 
   # Optional custom wallpaper image URL. Can be a remote image or local /static/img/wallpaper.jpg (make sure it has a small filesize for quick site painting)
   # wallpaper = "/static/img/wallpaper.jpg"
-  wallpaper = "https://followingmyfeet.com/wp-content/uploads/2018/02/825_2229-HDR.jpg"
+  #wallpaper = "https://followingmyfeet.com/wp-content/uploads/2018/02/825_2229-HDR.jpg"
 
   # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
   toc = true                                                                            # 是否开启目录
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
   bootcdn = false           # In china. @Deprecated: use [params.publicCDN]             # 是否使用bootcdn(@Deprecated: 请使用[params.publicCDN])
-  mathjax = true           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
-  katex = true             # see https://github.com/KaTeX/KaTeX
+  mathjax = false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+  katex = false           # see https://github.com/KaTeX/KaTeX
   contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
   changyanAppid = ""        # Changyan app id             # 畅言
