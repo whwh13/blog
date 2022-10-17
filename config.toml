@@ -52,7 +52,10 @@ defaultContentLanguage = "zh-cn"           # Default language to use
   weight = 40
   identifier = "categories"
   pageref = "/categories/"
-
+[[menu.main]]
+  name = "外部链接"
+  weight = 50
+  url = "https://www.xianmin.org/hugo-theme-jane/"
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
