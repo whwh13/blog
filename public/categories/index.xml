@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on whwh&#39;s blog for self</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on whwh&#39;s blog for self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 24 Oct 2022 12:01:57 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言</title>
+      <link>/categories/c%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Mon, 24 Oct 2022 12:01:57 +0800</pubDate>
+      
+      <guid>/categories/c%E8%AF%AD%E8%A8%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C思考题</title>
+      <link>/categories/c%E6%80%9D%E8%80%83%E9%A2%98/</link>
+      <pubDate>Mon, 17 Oct 2022 20:01:04 +0800</pubDate>
+      
+      <guid>/categories/c%E6%80%9D%E8%80%83%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

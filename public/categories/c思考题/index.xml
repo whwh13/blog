@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C思考题 on whwh&#39;s blog for self</title>
+    <link>/categories/c%E6%80%9D%E8%80%83%E9%A2%98/</link>
+    <description>Recent content in C思考题 on whwh&#39;s blog for self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Oct 2022 20:01:04 +0800</lastBuildDate><atom:link href="/categories/c%E6%80%9D%E8%80%83%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言第二章思考题</title>
+      <link>/post/c_chapter2_thinking/</link>
+      <pubDate>Mon, 17 Oct 2022 20:01:04 +0800</pubDate>
+      
+      <guid>/post/c_chapter2_thinking/</guid>
+      <description>&lt;h5 id=&#34;1-对于编程而言可移植性代表着什么&#34;&gt;1. 对于编程而言，可移植性代表着什么&lt;/h5&gt;
+&lt;p&gt;可移植性代表着能够仅做出很小的修改就可以使源程序在不同的系统中运行。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C语言第四章思考题</title>
+      <link>/post/c_chapter4_thinking/</link>
+      <pubDate>Mon, 17 Oct 2022 20:00:31 +0800</pubDate>
+      
+      <guid>/post/c_chapter4_thinking/</guid>
+      <description>&lt;h5 id=&#34;1-再次运行程序清单-41但是在要求输入名时请输入名和姓根据英文书写习惯名和姓中间有一个空格看看会发生什么情况为什么&#34;&gt;1. 再次运行程序清单 4.1，但是在要求输入名时，请输入名和姓（根据英文书写习惯，名和姓中间有一个空格），看看会发生什么情况？为什么？&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;名字没有问题，但是数字类似随机数。因为在遇到第一个空格时，scanf 认为已经读取完毕。空格之后的被后面的 weight 所识别并使用。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

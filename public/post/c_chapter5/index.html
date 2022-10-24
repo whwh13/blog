@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>C语言第五章 运算符、表达式和语句 - whwh&#39;s blog for self</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="whwh13" /><meta name="description" content="C语言学习，第五章笔记" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.104.3" />
+
+
+<link rel="canonical" href="/post/c_chapter5/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:title" content="C语言第五章 运算符、表达式和语句" />
+<meta property="og:description" content="C语言学习，第五章笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/c_chapter5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-10-24T12:01:57+08:00" />
+<meta property="article:modified_time" content="2022-10-24T12:04:16+08:00" />
+
+<meta itemprop="name" content="C语言第五章 运算符、表达式和语句">
+<meta itemprop="description" content="C语言学习，第五章笔记"><meta itemprop="datePublished" content="2022-10-24T12:01:57+08:00" />
+<meta itemprop="dateModified" content="2022-10-24T12:04:16+08:00" />
+<meta itemprop="wordCount" content="1649">
+<meta itemprop="keywords" content="C语言,学习,笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言第五章 运算符、表达式和语句"/>
+<meta name="twitter:description" content="C语言学习，第五章笔记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">whwh&#39;s blog for self</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      whwh&#39;s blog for self
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言第五章 运算符、表达式和语句</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          whwh13
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-10-24">
+      2022-10-24
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 1649 字 -
+        预计阅读 4 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="/categories/c%E8%AF%AD%E8%A8%80/"> C语言 </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#51-循环">5.1 循环</a></li>
+    <li><a href="#52-基本运算符">5.2 基本运算符</a>
+      <ul>
+        <li><a href="#521-赋值运算符-">5.2.1 赋值运算符 =</a></li>
+        <li><a href="#522--526-运算符-----">5.2.2 ~ 5.2.6 运算符 + - * /</a></li>
+        <li><a href="#527-运算优先级">5.2.7 运算优先级</a></li>
+      </ul>
+    </li>
+    <li><a href="#53-其他运算符">5.3 其他运算符</a>
+      <ul>
+        <li><a href="#531-sizeof-运算符和-size_t-类型">5.3.1 sizeof 运算符和 size_t 类型</a></li>
+        <li><a href="#532-求模运算符-">5.3.2 求模运算符 %</a></li>
+        <li><a href="#533-递增运算符-">5.3.3 递增运算符 ++</a></li>
+        <li><a href="#534-递减运算符--">5.3.4 递减运算符：&ndash;</a></li>
+        <li><a href="#535-优先级">5.3.5 优先级</a></li>
+        <li><a href="#536-不要自作聪明">5.3.6 不要自作聪明</a></li>
+      </ul>
+    </li>
+    <li><a href="#54-表达式和语句">5.4 表达式和语句</a>
+      <ul>
+        <li><a href="#541-表达式">5.4.1 表达式</a></li>
+        <li><a href="#542-语句">5.4.2 语句</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <h2 id="51-循环">5.1 循环</h2>
+<h2 id="52-基本运算符">5.2 基本运算符</h2>
+<h3 id="521-赋值运算符-">5.2.1 赋值运算符 =</h3>
+<ul>
+<li><code>bmw = 2002</code>意思是<code>把值 2002 赋给变量 bmw</code></li>
+<li>左值、可修改的左值、数据对象、右值 P106</li>
+<li>C语言可以多重赋值，方向为从右向左，其他语言大概率不支持</li>
+<li>例如<code>cheeta = tarzan = jane = 68</code></li>
+</ul>
+<h3 id="522--526-运算符-----">5.2.2 ~ 5.2.6 运算符 + - * /</h3>
+<ul>
+<li>一元运算符与二元运算符，+ - 同时可以做一元运算符，表示正负<code>rocky=-12;smoky=-rocky</code>。+ 做一元运算符只能用于 <code>dozen = +12;</code></li>
+</ul>
+<ul>
+<li>
+<p>C语言原生没有幂函数，可以用乘法表示</p>
+</li>
+<li>
+<p>整数截断：对于整数除法“4/3”，答案不会包含小数，会直接把小数部分给舍弃，称为<strong>截断</strong>；浮点数之间的除法会保留小数；对于混合使用浮点数和整数的运算，即<strong>混合类型</strong>，会将整数转化为浮点数在进行计算，一般情况下需要<strong>尽量避免</strong>。</p>
+</li>
+<li>
+<p>负数的整数之间的除法，例如当答案为“-3.8”，截断为 “-3”，称之为<strong>趋零截断</strong></p>
+</li>
+</ul>
+<h3 id="527-运算优先级">5.2.7 运算优先级</h3>
+<p>乘除法优先级大于加减，当全部优先级相同时从左往右进行，有括号先括号
+对于上面未规定的运算顺序，例如<code>y = 6 * 12 + 5 * 20;</code>，前后两个乘法运算的优先级相同，但中间多了一个优先级不同的运算，不符合上面的第二条。标准中对该运算的顺序没有规定，由不同的硬件来决定</p>
+<h2 id="53-其他运算符">5.3 其他运算符</h2>
+<p>C语言运算符有40多个，比较常用的还有四个</p>
+<h3 id="531-sizeof-运算符和-size_t-类型">5.3.1 sizeof 运算符和 size_t 类型</h3>
+<p>size_t 类型本质上是 unsigned int 或 unsigned long 的<strong>别名</strong>，在C语言头文件中使用 typedef 定义，具体哪种类型，由系统来定，转换说明使用%zd</p>
+<p>sizeof 的运算对象为具体的<strong>数据对象</strong>或者<strong>类型</strong>，如果运算对象是类型，则必须有括号，具体数据对象可以没有括号，但是最好加上括号。</p>
+<p>sizeof 运算结果是对象在内存中占用的字节数，对字符串，结果是占用的所有内存的大小而不是字符串的实际长度</p>
+<h3 id="532-求模运算符-">5.3.2 求模运算符 %</h3>
+<p>求模运算符只能用于整数，即求余数。</p>
+<p>求模运算更多用于判断语句中，每值某个数的整数倍则如何的判断</p>
+<ul>
+<li>
+<p>负数求模：<strong>趋零截断</strong>的原则下用 <code>a % b = a - (a/b)*b</code>计算</p>
+</li>
+<li>
+<p>几个例子：<code>11 / 5 = 2，11 % 5 = 1；11 / -5 = -2，11 % -5 = 1；-11 / -5 = 2，-11 % -5 = -1；-11 / 5 = -2，-11 % 5 = -1</code></p>
+</li>
+</ul>
+<h3 id="533-递增运算符-">5.3.3 递增运算符 ++</h3>
+<p>递增运算符会将其运算对象递增一，有两种模式：前缀模式、后缀模式。顾名思义，放在变量的前面或者后面
+递增运算的一个极大的优势是可以将代码写的更加优美，例如</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>shoe <span style="color:#666">=</span> <span style="color:#40a070">2.0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (<span style="color:#666">++</span>shoe <span style="color:#666">&lt;</span> <span style="color:#40a070">18.5</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    foot <span style="color:#666">=</span> SCALE <span style="color:#666">*</span> shoe <span style="color:#666">+</span> ADJUST;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即把变量递增过程放入循环条件中</p>
+<blockquote>
+<p>这种方式将判断循环的两个条件：循环条件以及参数改变 放在了一个地方，避免忘记</p>
+<p>但一定程度上降低了程序可读性</p>
+</blockquote>
+<h4 id="前缀模式与后缀模式的区别">前缀模式与后缀模式的区别</h4>
+<p>示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">int</span> a<span style="color:#666">=</span><span style="color:#40a070">1</span>,b<span style="color:#666">=</span><span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>a11<span style="color:#666">=</span>a<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>_11b<span style="color:#666">=++</span>b;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果是<code>a11 = 1 ; _11b = 2</code>
+相同点是对应的变量值，a 和 b 都递增了，区别是在表达式中使用的 a++ 没有改变，仍然是 1, 而 ++b 则表示已经递增过的值。
+由此，在判断表达式中如果使用递增符号，则需要注意，例如<code>a++ &lt; 9</code>和<code>++a &lt; 9</code>循环次数相差 1</p>
+<blockquote>
+<p>由于不同的递增方式会对代码产生不同的影响，因此最明智的方式是不在表达式中使用</p>
+<p>例如，使用<code>++i;b = i;</code>而不是<code>b = ++i;</code></p>
+</blockquote>
+<h3 id="534-递减运算符--">5.3.4 递减运算符：&ndash;</h3>
+<p>与递增运算类似</p>
+<h3 id="535-优先级">5.3.5 优先级</h3>
+<p>递增递减运算符优先级仅次于括号</p>
+<blockquote>
+<p>(x*y)++ 的使用是无效的，++仅仅会作用于可修改的左值</p>
+</blockquote>
+<h3 id="536-不要自作聪明">5.3.6 不要自作聪明</h3>
+<p>一次性使用太多递增运算符，容易导致自己糊涂以及发生错误
+C语言中并没有对不同项的运算规定顺序
+例如：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;%d %d</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,num,num<span style="color:#666">*</span>num<span style="color:#666">++</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以先计算前面的num 再计算num++,得到（5，25），也可以先计算num++,再计算前面的num (6,30)。也有可能先计算中间num，再计算num++,最后计算最前面的num，有（6，25）.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>ans <span style="color:#666">=</span> num<span style="color:#666">/</span><span style="color:#40a070">2</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span><span style="color:#666">*</span>(<span style="color:#40a070">1</span> <span style="color:#666">+</span> num<span style="color:#666">++</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>y<span style="color:#666">=</span>n<span style="color:#666">++</span> <span style="color:#666">+</span> n<span style="color:#666">++</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也都有可能出现问题，应当予以避免
+于是，规定以下情况不使用递加或递减，可以使程序更好运行</p>
+<ul>
+<li>变量出现在一个函数的多个参数中</li>
+<li>变量多次出现在一个表达式中</li>
+</ul>
+<h2 id="54-表达式和语句">5.4 表达式和语句</h2>
+<h3 id="541-表达式">5.4.1 表达式</h3>
+<p>表达式由运算符和运算对象组成</p>
+<p>一些表达式由子表达式组成，<code>a*(b+c/d)/20</code>中，c/d可以认为是子表达式</p>
+<p>每个表达式都有一个值，包括赋值和比较。q = 2*5,作为一个表达式时，值为10，等于赋值的值（参考连续赋值）。不等式<code>a&gt;2</code>，当为真时，值为1，否则为0。</p>
+<p>不建议使用但是不错的表达式：<code>6 + (c = 3 + 8)</code>,值为17，后面视为子表达式</p>
+<h3 id="542-语句">5.4.2 语句</h3>
+    </div>
+
+    
+    
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/c_chapter2_thinking/">
+            <span class="next-text nav-default">C语言第二章思考题</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2022
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        whwh13
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var remark_config = {
+    host: 'https:\/\/remark42.example.com',
+    site_id: 'remark',
+    components: [
+	    'embed',
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

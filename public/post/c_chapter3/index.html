@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>C语言第三章 - whwh&#39;s blog for self</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="whwh13" /><meta name="description" content="C语言学习，第三章笔记" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.104.3" />
+
+
+<link rel="canonical" href="/post/c_chapter3/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:title" content="C语言第三章" />
+<meta property="og:description" content="C语言学习，第三章笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/c_chapter3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-10-17T19:54:54+08:00" />
+<meta property="article:modified_time" content="2022-10-17T20:38:55+08:00" />
+
+<meta itemprop="name" content="C语言第三章">
+<meta itemprop="description" content="C语言学习，第三章笔记"><meta itemprop="datePublished" content="2022-10-17T19:54:54+08:00" />
+<meta itemprop="dateModified" content="2022-10-17T20:38:55+08:00" />
+<meta itemprop="wordCount" content="3394">
+<meta itemprop="keywords" content="C语言,学习,笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言第三章"/>
+<meta name="twitter:description" content="C语言学习，第三章笔记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">whwh&#39;s blog for self</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      whwh&#39;s blog for self
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言第三章</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          whwh13
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-10-17">
+      2022-10-17
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 3394 字 -
+        预计阅读 7 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="/categories/c%E8%AF%AD%E8%A8%80/"> C语言 </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本数据类型">基本数据类型</a>
+      <ul>
+        <li><a href="#int类型">int类型</a></li>
+        <li><a href="#其他整数类型">其他整数类型</a></li>
+        <li><a href="#char类型">char类型</a></li>
+        <li><a href="#_bool-类型">_Bool 类型</a></li>
+        <li><a href="#可移植类型stdinthinttypesh">可移植类型：stdint.h、inttypes.h</a></li>
+        <li><a href="#float">float</a></li>
+        <li><a href="#复数与虚数">复数与虚数</a></li>
+        <li><a href="#各种类型大小">各种类型大小</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用数据类型">使用数据类型</a></li>
+    <li><a href="#转义序列示例">转义序列示例</a>
+      <ul>
+        <li><a href="#刷新输出">刷新输出</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <h2 id="基本数据类型">基本数据类型</h2>
+<h3 id="int类型">int类型</h3>
+<h4 id="1-声明">1. 声明</h4>
+<p>可以通过int进行声明，可以在同一行声明多个变量，中间用逗号分隔</p>
+<h4 id="2-初始化变量">2. 初始化变量</h4>
+<p>在声明变量的过程中可以为变量赋予初始值，例如：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">int</span> cows<span style="color:#666">=</span><span style="color:#40a070">32</span>,goats<span style="color:#666">=</span><span style="color:#40a070">46</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在同一条声明中也同时可以由赋予初始值的声明与不赋予初始值的声明，但这种格式容易让人误解，不太适合</p>
+<h4 id="3-int常量">3. int常量</h4>
+<p>例如22，44都是整型常量，但是 22.0、2.2E1 不是。C语言将大多数整型常量视为int类型。</p>
+<h4 id="4-打印int值">4. 打印int值</h4>
+<p>%d 指明在一行中整数的位置。每个 %d 应当与变量列表中的int值相对应，未对应数量会导致编译器无法识别的错误。
+例如：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;%d minus %d is %d</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span><span style="">，</span>ten);           
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 C17 中 printf 变量必须对应数量，否则编译失败</p>
+<h4 id="5-八进制与十六进制">5. 八进制与十六进制</h4>
+<p>0x 与 0X 表示十六进制，0 表示八进制，都放在前缀。无论将一个数写作 0x10 、10 或是 08 在计算机的存储中是相同的（都是数字0）</p>
+<h4 id="6-打印输出八进制与十六进制">6. 打印输出八进制与十六进制</h4>
+<p>%d,%x %X,%o，分别是十进制、十六进制、八进制的占位符
+而使用 %#x,%#o 则会显示前缀 0x、0 ,使用 %#X 会显示前缀 0X .</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8">8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> x <span style="color:#666">=</span><span style="color:#40a070">100</span>;
+</span></span><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;dec=%d,octal=%o,hex=%X</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,x,x,x);
+</span></span><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;dec=%d,octal=%#o,hex=%#X&#34;</span>,x,x,x);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="其他整数类型">其他整数类型</h3>
+<p>C语言提供3个附属关键字对整数类型修饰：short、long以及unsigned。
+C语言并不对溢出行为进行规定</p>
+<ul>
+<li>
+<p>short int 可以简写为 short 占用的存储空间比 int 少</p>
+</li>
+<li>
+<p>long int (long)，long long int（long long） 分别是长与更长，适用于不同的大数值场合</p>
+</li>
+<li>
+<p>在win11 64位中，分别占用 16位、32、64、128位</p>
+</li>
+<li>
+<p>unsigned int(unsigned) 表示无符号，范围是 0~2^32-1，也可以与其他进行组合，占用相同位数表示更大的值</p>
+</li>
+<li>
+<p>signed long int 与 long int 并无区别</p>
+</li>
+<li>
+<p>选用时如不必使用负数应当首先考虑 unsigned 类型，如非必要不要使用long和long long ，但是应当考虑到部分机器中 int 可能只占用16位的移植性问题。</p>
+</li>
+<li>
+<p>short 在通常的使用中不必要考虑</p>
+</li>
+<li>
+<p>常量：编译器会依次将常数视为：int, long, unsigned long, long long, unsigned long long</p>
+</li>
+<li>
+<p>如果想特地用long或者longlong存储常量，仅需要在数字后面加上 l 或者 L 、ll 或者 LL ，例如：0X12、0ll</p>
+</li>
+</ul>
+<h4 id="打印shortlongunsigned类型">打印short,long,unsigned类型</h4>
+<blockquote>
+<p>unsigned:   %u
+long: %ld
+long long: %lld
+long十六进制:  %lx
+short: %h
+八进制short:  %ho
+unsigned long:   %lu</p>
+</blockquote>
+<p><strong>原则是h和l和ll是前缀，u，o/x/d是后缀,可以相互搭配
+使用printf时应保证每个值都有其占位符以及每个占位符与其类型一致。</strong></p>
+<h3 id="char类型">char类型</h3>
+<p>char用于存储字符，实际存储的是整数，用整数的作为字符的代号。例如ASCII编码，范围0~127，例如65表示 A 。由于ASCII码仅仅用7位二进制数即可表示。因此 char 通常定义为8位的存储单元。其他系统提供拓展ASCII码也在8位表示中。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="">许多字符集超过</span><span style="color:#40a070">127</span><span style="">甚至超过</span><span style="color:#40a070">255</span><span style="">，例如</span><span style="color:#60add5">Unicode超过110000个</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>C语言将一字节定义为char占用的位（bit）数，而非一般意义上的8位，因此无论是16位还是32位都能用 char 类型。</p>
+<h4 id="字符常量与初始化">字符常量与初始化</h4>
+<ul>
+<li>在C语言中，将<strong>单引号</strong>括起来的<strong>单个字符</strong>称为字符常量，编译器发现即会将其转换成相应的代码值</li>
+<li>如果没有单引号，编译器会认为是一个变量，如果是双引号，编译器会认为是字符串</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">char</span> broiled;       <span style="color:#60a0b0;font-style:italic">/* 声明变量，可以同时赋初始值 */</span>
+</span></span><span style="display:flex;"><span>broiled <span style="color:#666">=</span> <span style="color:#4070a0">&#39;T&#39;</span>;      <span style="color:#60a0b0;font-style:italic">/* 赋值，正确 */</span>
+</span></span><span style="display:flex;"><span>broiled <span style="color:#666">=</span> T;        <span style="color:#60a0b0;font-style:italic">/* 赋值错误，此时T表示一个变量 */</span>
+</span></span><span style="display:flex;"><span>broiled <span style="color:#666">=</span> <span style="color:#4070a0">&#34;T&#34;</span>;      <span style="color:#60a0b0;font-style:italic">/* 赋值错误，此时T是一个字符串 */</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>事实上，字符是以数值形式存储的，所以可以用数字代码赋值 <code>char grade = 65;</code>,该代码会给 grade 赋值 A（如果系统能够使用ASCII码），但是这是一种非常不好的编程风格</li>
+<li>奇怪问题，C语言将字符视为int类型，即在int为32位，char为8位的系统中<code>char grade = 'FATE'</code>等价于<code>char grade = 1178686533 或者 OX46415445</code>,在ASCII中，F为<code>0X46</code>。因此这样反而相当于<code>char grade = 'E'</code>，因为只占8位，只有最后8位。（但是报错）</li>
+</ul>
+<h4 id="非打印字符">非打印字符</h4>
+<p>单引号只适用于字符、数字和标点符号，但是有些ASCII字符无法打印，比如：退格、换行、蜂鸣等，无法使用单引号字符表示。C语言提供了3种方法表示。</p>
+<ol>
+<li>
+<p>使用ASCII码直接表示赋值<code>char beep = 7</code>,表示蜂鸣，这里是十进制常量。</p>
+</li>
+<li>
+<p>使用特殊的符号序列，例如<code>char nerf ='\n'</code>，打印该变量，效果为在屏幕上另起一行（相当于直接用\n）。</p>
+<table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\a</td>
+<td>警报</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>反斜杠（\）</td>
+</tr>
+<tr>
+<td>\ '</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\ &quot;</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\ ?</td>
+<td>问号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>\a, \b, f, \n, \r, \t, \v都是对屏幕光标的具体位置进行调整，其中\a代表发出警报但是不改变光标位置。垂直制表符和换页符在PC 中可能无法识别</li>
+<li>\ , \ &lsquo;, \ &quot; 是因为此些符号是printf() 函数的一部分，直接使用会造成混乱。</li>
+</ul>
+</li>
+<li>
+<p>使用转义字符加八进制或十六进制ASCII码
+\0(xx)  \x(xx)  括号里的XX表示数字，具体使用时不加括号，分别是八进制和十六进制。十六进制x必须用小写。
+例如<code>beep = '\007'</code>在使用八进制时，最前面的0可以省略，比如<code>beep = '\07'</code>或者<code>beep = '\7'</code>,注意这里的都是八进制数字
+对<code>test='\x10'</code>与<code>char test=16</code>与<code>test = '\020'</code>具有相同的结果</p>
+</li>
+<li>
+<p>几个问题</p>
+</li>
+</ol>
+<ul>
+<li>使用转义字符时,如果被括在双引号内,表示字符串,就不用单引号再括起来</li>
+<li>方法3中的使用ASCII码尽量不要使用,以保证格式统一以及便于记忆</li>
+<li>转义字符可以直接放入字符串中.</li>
+</ul>
+<h4 id="打印字符char">打印字符char</h4>
+<p>使用 c% 作为占位符表示字符，也可以使用 d% 作为占位符会输出对应的代码。printf() 函数中的转换说明（占位符）说明程序的显示方式，不改变存储。</p>
+<h3 id="_bool-类型">_Bool 类型</h3>
+<p>_Bool 类型用于表示布尔值，1表示true，0表示false，原则上仅占用1位空间。</p>
+<h3 id="可移植类型stdinthinttypesh">可移植类型：stdint.h、inttypes.h</h3>
+<p>用于确保在不同系统中效果相同。P55需要时查看</p>
+<h3 id="float">float</h3>
+<p>float至少表示6位有效数字，取值至少为 10^(-37)~10^37 ，double双精度至少表示10位有效数字。一般会占用64位。long doluble比double精度更高，但是未规定具体数值。</p>
+<ol>
+<li>
+<p>声明
+举例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">float</span> noah <span style="color:#666">=</span> <span style="color:#40a070">6.63e-34</span>;
+</span></span><span style="display:flex;"><span><span style="color:#902000">long</span> <span style="color:#902000">double</span> gnp;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>常量</p>
+<p>浮点型常量一般表达为有小数点的数（有符号）后面加e或E。
+规则：可省略正号、可省略小数点或指数（为0时）、可省略小数或整数（为0时），不能同时省略两者，否则会像整数。
+不能在浮点型常量中间加空格（E前后）。</p>
+<p>默认情况，编译器使用double浮点量，
+但是对于</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">float</span> some;
+</span></span><span style="display:flex;"><span>some <span style="color:#666">=</span> <span style="color:#40a070">4.0</span> <span style="color:#666">*</span> <span style="color:#40a070">2.0</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会出现4.0 和2.0 都是double ，计算之后结果再截断为float ，尽管精度较高，但会减慢程序运行速度。于是在浮点数后面加f 或者F 可以设定为float，加l 或L 可以设定long double。C99中加入十六进制表示浮点数,例如
+<code>0xa.1fp10</code>
+a等于十进制10，.1f是1/16 加上15/256，（十六进制f 为15/256），p相当于十进制的E 但是是2的意思，即 2^10 。于是该值表示为（10+1/16+15/256）*1024。</p>
+</li>
+<li>
+<p>打印</p>
+<p>printf() 函数使用占位符%f 打印float或double，用%e 打印指数计数法。用%a 表示十六进制的的指数计数。
+打印long double使用%Lf、%Le、%La。</p>
+</li>
+<li>
+<p>上溢和下溢</p>
+<p>当数字过大（计算导致）会发生上溢，会给该函数赋予一个无穷大值，打印为inf或infinity
+下溢类似于把（0.1234E10）除以10会有（0.0123E-10）这样会失去精度叫下溢。
+NAN，如果给asin()函数大于1的量，函数返回NAN。</p>
+</li>
+<li>
+<p>浮点数舍入错误</p>
+<p>如下演示，不同系统可能出现0.0000、-13584010575872.0000、4008175468544.000000 多种可能</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-13">13</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;math.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#902000">float</span> a,b;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b<span style="color:#666">=</span><span style="color:#40a070">2.0e20</span> <span style="color:#666">+</span><span style="color:#40a070">1.0</span>;
+</span></span><span style="display:flex;"><span>a<span style="color:#666">=</span>b<span style="color:#666">-</span><span style="color:#40a070">2.0e20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;%f </span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,a);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}   
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出现该原因是由于浮点数的大数吞小数</p>
+</li>
+</ol>
+<h3 id="复数与虚数">复数与虚数</h3>
+<p><code>float \_Complex、double \_Complex、long double \_Complex</code>每个复数含有两个浮点数，表示实部和虚部。
+<code>float \_Imaginary、double \_Imaginary、long double \_Imaginary</code>表示虚数
+当包含complex.h时，可以使用complex代替_Complex，imaginary代替_Imaginary。</p>
+<h3 id="各种类型大小">各种类型大小</h3>
+<p>见typesize.c</p>
+<h2 id="使用数据类型">使用数据类型</h2>
+<p>应当注意为合适的变量选择类型，比如表示人数，就尽量用整数。在赋值时，应当保证右侧常量类型与左侧相同。但是初始的定义不与要满足，往往带来问题。例如<code>int cost= 12.99  float pi=3.1415926536</code>。赋予cost为12，而float也会有截断问题。</p>
+<h2 id="转义序列示例">转义序列示例</h2>
+<h3 id="刷新输出">刷新输出</h3>
+<p>C语言规定，在缓冲区满、换行或者需要输入时刷新屏幕，如果需要刷新屏幕没有刷新，可以用换行强制刷新。</p>
+    </div>
+
+    
+    
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/c_chapter4/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">C语言第四章</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/c_chapter2/">
+            <span class="next-text nav-default">C语言第二章</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2022
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        whwh13
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var remark_config = {
+    host: 'https:\/\/remark42.example.com',
+    site_id: 'remark',
+    components: [
+	    'embed',
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
