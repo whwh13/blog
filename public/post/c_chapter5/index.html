@@ -69,7 +69,7 @@
 <meta itemprop="name" content="C语言第五章 运算符、表达式和语句">
 <meta itemprop="description" content="C语言学习，第五章笔记"><meta itemprop="datePublished" content="2022-10-24T12:01:57+08:00" />
 <meta itemprop="dateModified" content="2022-10-24T12:04:16+08:00" />
-<meta itemprop="wordCount" content="1649">
+<meta itemprop="wordCount" content="2914">
 <meta itemprop="keywords" content="C语言,学习,笔记," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C语言第五章 运算符、表达式和语句"/>
 <meta name="twitter:description" content="C语言学习，第五章笔记"/>
@@ -383,8 +383,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1649 字 -
-        预计阅读 4 分钟
+        约 2914 字 -
+        预计阅读 6 分钟
       </span>
 
     <div class="post-meta-category">
@@ -433,8 +433,15 @@
       <ul>
         <li><a href="#541-表达式">5.4.1 表达式</a></li>
         <li><a href="#542-语句">5.4.2 语句</a></li>
+        <li><a href="#543-复合语句compund-statement">5.4.3 复合语句（compund statement）</a></li>
       </ul>
     </li>
+    <li><a href="#55-类型转换">5.5 类型转换</a>
+      <ul>
+        <li><a href="#551-强制类型转换运算符">5.5.1 强制类型转换运算符</a></li>
+      </ul>
+    </li>
+    <li><a href="#56-带参数的函数">5.6 带参数的函数</a></li>
   </ul>
 </nav>
   </div>
@@ -581,6 +588,97 @@ C语言中并没有对不同项的运算规定顺序
 <p>每个表达式都有一个值，包括赋值和比较。q = 2*5,作为一个表达式时，值为10，等于赋值的值（参考连续赋值）。不等式<code>a&gt;2</code>，当为真时，值为1，否则为0。</p>
 <p>不建议使用但是不错的表达式：<code>6 + (c = 3 + 8)</code>,值为17，后面视为子表达式</p>
 <h3 id="542-语句">5.4.2 语句</h3>
+<p>一条语句表示一条完整的计算机命令，大部分语句以分号结尾.<code>legs=4</code>不是语句，可能是语句的一部分，而<code>legs=4;</code>表示语句。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>;
+</span></span><span style="display:flex;"><span><span style="color:#40a070">8</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40a070">3</span> <span style="color:#666">+</span> <span style="color:#40a070">4</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的几条也都是语句，但是在程序中什么都不做，没有意义</p>
+<p>声明不是表达式语句</p>
+<ul>
+<li>
+<p>表达式语句由：赋值表达式语句和函数表达式语句</p>
+</li>
+<li>
+<p>迭代语句（while语句没有括号时）</p>
+</li>
+<li>
+<p>复合语句</p>
+</li>
+</ul>
+<h4 id="副作用side-effect">副作用（side effect）</h4>
+<p>C语言中，每个语句的主要目的是求值，比如<code>a=100;</code> <code>printf(&quot;sdfasg&quot;)</code>，每个语句的目的（C语言角度）都是求值，比如上面的第一条语句返回的值是 100，第二条语句返回打印的字符数。</p>
+<p>而其产生的其他效果，比如给 a 赋予了一个值，以及打印了一些字符，便被称为副作用。</p>
+<h4 id="序列点sequence-point">序列点（sequence point）</h4>
+<p>序列点是程序执行点，所有的副作用都应该在该点之前完成。通常来说一个分号是一个序列点。C标准中还规定了一个完整表达式的结束也是一个序列点。</p>
+<p>完整表达式：一个表达式语句不是另一个表达式的子表达式时，包含循环条件和表达式语句</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(a<span style="color:#666">++&lt;</span><span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;%d</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,a);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该语句中，在a++&lt;10之后虽然没有分号，但是已经构成了一个完整表达式，所以后面打印的值应当是递增之后的。</p>
+<h3 id="543-复合语句compund-statement">5.4.3 复合语句（compund statement）</h3>
+<p>复合语句是用花括号括起来的一条或多条语句，也称为<strong>块（block）</strong></p>
+<p>对于一些函数，循环来说，例如while，复合语句的效果类似于一条语句。</p>
+<h2 id="55-类型转换">5.5 类型转换</h2>
+<ol>
+<li>
+<p>表达式中，short 和 char （无论有无符号）会被转换成 int 。如果 short 和 int 一样大（某些系统中是这样的），unsigned short 会被转换成 unsigned int。该转换称为<strong>升级（promotion）</strong></p>
+</li>
+<li>
+<p>涉及到两种不同的类型，会被转换成两者的高级别形式。比如 int 和 long int 相加，都转换成 long int 再相加</p>
+</li>
+<li>
+<p>类型的级别从高到底为：long double、double、float、unsigned long long、long long、unsigned long、long、unsigned int、int。</p>
+<p>上面没有short和char，是因为已经被升级了</p>
+<p>当long 和 int 相同，unsigned int 比 long 级别高</p>
+</li>
+<li>
+<p>赋值表达式中，右值的计算结果会被转换成左值的类型，该过程可能出现**降级（demotion）**或升级</p>
+</li>
+<li>
+<p>函数作为参数传递时，char 、short 被转换成 int，float 被转换成 double。</p>
+</li>
+</ol>
+<blockquote>
+<p>通常类型升级不会出现太多问题，但是降级会，因为较低的类型放不下整个数字</p>
+</blockquote>
+<p>4中转换成目标类型的过程中：</p>
+<ol>
+<li>目标是无符号整型，待赋值的值是整数。忽略额外位数，比如8位的unsigned char 有8位，整数对256求模</li>
+<li>目标是有符号整型，待赋为整数，结果需进一步讨论</li>
+<li>目标是整型，待赋为浮点数，该行为是未定义的（<strong>这好像和下面相悖</strong>）</li>
+</ol>
+<p>把浮点数转换成整数类型，会发生<strong>趋零截断</strong></p>
+<h3 id="551-强制类型转换运算符">5.5.1 强制类型转换运算符</h3>
+<p>上面讨论的类型转换都是自动完成的，然而有时候需要精确的类型转换，此时需要**强制类型转换（cast）**例如</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>mice <span style="color:#666">=</span> <span style="color:#40a070">1.6</span> <span style="color:#666">+</span> <span style="color:#40a070">1.7</span>
+</span></span><span style="display:flex;"><span>mice <span style="color:#666">=</span> (<span style="color:#902000">int</span>)<span style="color:#40a070">1.6</span> <span style="color:#666">+</span>(<span style="color:#902000">int</span>)<span style="color:#40a070">1.7</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在对应的值前加上括号和类型，但是由于趋零截断，上面两个计算的结果是不同的。</p>
+<p>一般不应该混合使用类型，很多语言甚至不允许</p>
+<h2 id="56-带参数的函数">5.6 带参数的函数</h2>
     </div>
 
     
