@@ -243,3 +243,41 @@ mice = (int)1.6 +(int)1.7
 一般不应该混合使用类型，很多语言甚至不允许
 
 ## 5.6 带参数的函数
+
+构造带参数的函数时，在其函数头的括号中加上所包含的参数的**声明**，例如`void pound(int n)`，不带参数的函数该部分是void。
+
+通过声明参数，会创建一个**形参（术语：parameter）**，形式参数（formal argument、formal parameter）。
+
+而当使用该函数，`pound(m)`中，m是实际使用的参数，称为**实参（argument）**，实际参数（actual argument、actural parameter）。
+
+示例：
+
+```C
+/*演示带参数的函数*/
+#include<stdio.h>
+void pound(int n);          //函数声明
+int main(void)
+{
+    int times = 5;
+    char ch = '!';
+    float f = 6.0f;
+
+    pound(times);           //int类型参数   
+    pound(ch);              // 等价于pound((int)ch),类型转换
+    pound(f);               //同上
+
+    return 0;
+}
+void pound(int n)
+{
+    while (n-->0)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+```
+
+在函数头中声明的变量名是函数私有的，仅仅在声明的函数中使用，对函数之外函数比如主函数，没有影响
+
+上面使用 pound(ch) 时，由于pound函数的参数类型是 int ，与 char 不匹配，故根据前面的转换方法进行
