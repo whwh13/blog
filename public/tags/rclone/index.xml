@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rclone on whwh&#39;s blog for self</title>
+    <link>/tags/rclone/</link>
+    <description>Recent content in rclone on whwh&#39;s blog for self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 26 Oct 2022 09:13:50 +0800</lastBuildDate><atom:link href="/tags/rclone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rclone 在群晖中挂载</title>
+      <link>/post/rclone_synology/</link>
+      <pubDate>Wed, 26 Oct 2022 09:13:50 +0800</pubDate>
+      
+      <guid>/post/rclone_synology/</guid>
+      <description>&lt;p&gt;同时在 VPS 和群晖中使用 rclone，VPS 配合 qbittorrent 的 rss 功能自动下载正在追剧和追番的视频，同时将其上传到 Google Drive 中。而群晖使用 rclone 挂载相应的文件夹通过 emby 观看视频。这里主要记录挂载群晖的过程。&lt;/p&gt;
+&lt;h3 id=&#34;挂载过程&#34;&gt;挂载过程&lt;/h3&gt;
+&lt;p&gt;使用群晖挂载rclone主要参照了两个教程
+&lt;a href=&#34;https://blog.csdn.net/diqiudq/article/details/126070602&#34;&gt;“申请google drive api并使用rclone挂载团队盘为本地磁盘”&lt;/a&gt;
+&lt;a href=&#34;https://www.bilibili.com/read/cv16130034&#34;&gt;Rclone 安装配置教程&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;遇到问题及解决&#34;&gt;遇到问题及解决&lt;/h4&gt;
+&lt;h5 id=&#34;代理问题&#34;&gt;代理问题&lt;/h5&gt;
+&lt;p&gt;在本机的电脑终端运行rclone authorize时总会无法获取cookie，这是因为终端不会使用系统代理，需要运行下列代码为终端提供代理。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-2&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#007020&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#bb60d5&#34;&gt;http_proxy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;http://127.0.0.1：port
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#007020&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#bb60d5&#34;&gt;https_proxy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;http://127.0.0.1：port
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h6 id=&#34;注意proxy-与--之间不应该有空格这也是我使用虚拟机的原因以为实体机不能代理&#34;&gt;&lt;strong&gt;注意&lt;/strong&gt;：proxy 与 = 之间不应该有空格，这也是我使用虚拟机的原因（以为实体机不能代理）&lt;/h6&gt;
+&lt;h5 id=&#34;虚拟机下载速度&#34;&gt;虚拟机下载速度&lt;/h5&gt;
+&lt;p&gt;虚拟机安装rclone时速度很慢，像卡住一样，&lt;strong&gt;猜测是&lt;/strong&gt;安装过程中需要下载文件。注意不要因为安装的慢不耐烦提前退出。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

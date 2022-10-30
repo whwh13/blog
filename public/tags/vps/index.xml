@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPS on whwh&#39;s blog for self</title>
+    <link>/tags/vps/</link>
+    <description>Recent content in VPS on whwh&#39;s blog for self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Oct 2022 21:42:45 +0800</lastBuildDate><atom:link href="/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新的 nat vps</title>
+      <link>/post/new_vps_nat/</link>
+      <pubDate>Thu, 27 Oct 2022 21:42:45 +0800</pubDate>
+      
+      <guid>/post/new_vps_nat/</guid>
+      <description>&lt;p&gt;最近正值黑五，打算换一台VPS，正巧低价买了一台NAT型的vps，这里练一下手，记录一下新拿到VPS应该怎样操作
+我比较习惯的系统是Ubuntu，一般使用 20.04 ，这篇文章会建立在 ubuntu 20.04 的基础上&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

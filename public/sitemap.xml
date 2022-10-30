@@ -3,63 +3,126 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/tags/c%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <loc>/tags/ipv6/</loc>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/categories/c%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <loc>/categories/linux%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/c_chapter5/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <loc>/tags/nat/</loc>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vps/</loc>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/new_vps_nat/</loc>
+    <lastmod>2022-10-27T21:42:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2022-10-26T09:13:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rclone/</loc>
+    <lastmod>2022-10-26T09:13:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/rclone_synology/</loc>
+    <lastmod>2022-10-26T09:13:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%BD%B1%E8%A7%86%E5%BA%93/</loc>
+    <lastmod>2022-10-26T09:13:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/c%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2022-10-25T21:12:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/c%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2022-10-25T21:12:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/c_chapter5/</loc>
+    <lastmod>2022-10-25T21:12:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-25T21:12:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-10-25T11:47:29+08:00</lastmod>
+    <lastmod>2022-10-25T21:12:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
