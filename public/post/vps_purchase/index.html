@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>rclone · whwh&#39;s blog for self</title>
+  <title>Vps - whwh&#39;s blog for self</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,7 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="whwh13" />
+<meta name="author" content="whwh13" /><meta name="description" content="记录对比各个各个VPS运营商的过程，根据需求选择合适的VPS" />
+<meta name="keywords" content="VPS, 购物" />
+
 
 
 
@@ -32,8 +34,8 @@
 <meta name="generator" content="Hugo 0.104.3" />
 
 
-<link rel="canonical" href="/tags/rclone/" />
-<link href="/tags/rclone/index.xml" rel="alternate" type="application/rss+xml" title="whwh&#39;s blog for self" />
+<link rel="canonical" href="/post/vps_purchase/" />
+
 
 
 
@@ -58,15 +60,20 @@
 
 
 
-<meta property="og:title" content="rclone" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/rclone/" />
+<meta property="og:title" content="Vps" />
+<meta property="og:description" content="记录对比各个各个VPS运营商的过程，根据需求选择合适的VPS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/vps_purchase/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-10-26T09:16:52+08:00" />
+<meta property="article:modified_time" content="2022-10-26T09:16:52+08:00" />
 
-<meta itemprop="name" content="rclone">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="rclone"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="Vps">
+<meta itemprop="description" content="记录对比各个各个VPS运营商的过程，根据需求选择合适的VPS"><meta itemprop="datePublished" content="2022-10-26T09:16:52+08:00" />
+<meta itemprop="dateModified" content="2022-10-26T09:16:52+08:00" />
+<meta itemprop="wordCount" content="492">
+<meta itemprop="keywords" content="VPS,购物," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vps"/>
+<meta name="twitter:description" content="记录对比各个各个VPS运营商的过程，根据需求选择合适的VPS"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -349,66 +356,161 @@
     <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vps</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          whwh13
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-10-26">
+      2022-10-26
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 492 字 -
+        预计阅读 1 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="/categories/linux%E6%8A%80%E5%B7%A7/"> Linux技巧 </a>
           
-
-<section id="archive" class="archive">
-  
-    
-      <div class="archive-title tag">
-        <h2 class="archive-name">标签： rclone</h2>
       </div>
+
+
     
-  
+    
 
-  
-    <div class="archive-post">
-      <time datetime="2022-10-30" class="archive-post-time">
-        2022-10-30
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rclone_vps/" class="archive-post-link">
-          rclone配合qBittorrent在VPS使用
-        </a>
-      </span>
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+
+
+    
+    <div class="post-content">
+      <p>我使用的VPS在11月10号到期，虽然 IP 没有被完全封禁，但是443端口已经不能用了，所以打算换个VPS，以满足更高的需求，在这里记录一下各个VPS的条件。主要的需求由以下几个：</p>
+<ul>
+<li>挂梯子以及网站伪装</li>
+<li>年付在20美刀一下</li>
+<li>硬盘容量相对较大，至少应该有 30GB，用于给 Google Drive 转存</li>
+<li>对BT下载具有一定的容忍度,后面详细讨论</li>
+</ul>
+<h3 id="测试脚本">测试脚本</h3>
+<p>几个相对用的比较多的测试脚本，不一定完全安全，用之前先看看</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>wget -qO-  git.io/superbench.sh | bash
+</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#666">(</span>curl -Lso- https://git.io/superspeed.sh<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>wget -q https://github.com/Aniverse/A/raw/i/a <span style="color:#666">&amp;&amp;</span> bash a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="可以关注的低价vps">可以关注的低价VPS</h3>
+<p><a href="https://virmach.com/">VIR</a>
+<a href="https://pacificrack.com/">PR</a>
+<a href="https://www.racknerd.com/">RN</a>
+<a href="https://dedipath.com/">DDP</a>
+<a href="https://cloudcone.com/">CC</a></p>
+<h3 id="vps-与-bt-下载">VPS 与 BT 下载</h3>
+<p>很多云服务提供商会禁止BT下载，主要原因是版权DMAC相关会被投诉。所以下载国内发布的一般没问题（？）
+<img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/10/26/20221026200148.jpg" alt="一些人的经验之谈？"></p>
+<h3 id="seedbox">SEEDBOX</h3>
+<p>在查找VPS对于BT的容忍程度的时候了解到的 seedbox ，其本质上类似于只能使用部分BT软件和文件管理器的VPS，不能自己安装软件
+<a href="https://giga-rapid.com/products/seedboxes">Gigabox 1欧元1个月</a></p>
+<h3 id="nat型vps">NAT型VPS</h3>
+<p>原理是数个机子共用一个IP，每个机子只能使用有限个端口，通过这种方式分担IP的价格，能做到很低的价格
+<a href="https://hosting.gullo.me/order/config/index/nat-ipv4-vps-de/?group_id=5&amp;pricing_id=55#">2刀用优惠码 LEB-NAT-128MB</a>
+<a href="https://blog.whwh13.tk/post/new_vps_nat/">nat型VPS</a></p>
+<h3 id="临时使用">临时使用</h3>
+<p>在买之前的 NAT 型 VPS 的时候买了一张 5 美刀的信用卡，还剩下 3 美刀，也就想着物尽其用买了一个 1 个月的 VPS，用于等黑五这段时间的备用
+<a href="https://lowendtalk.com/discussion/181836/flash-sale-50-off-for-2-months-directadmin-softaculous-kvm-virtualizor-nvme-storage">$2.75 4核 4G 80SSD</a>
+<a href="https://blog.whwh13.tk/post/rclone_vps/">配置Rclone</a></p>
     </div>
+
+    
+    
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vps/">VPS</a>
+            <a href="/tags/%E8%B4%AD%E7%89%A9/">购物</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/new_vps_nat/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">新的 nat vps</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/rclone_synology/">
+            <span class="next-text nav-default">Rclone 在群晖中挂载</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
-    <div class="archive-post">
-      <time datetime="2022-10-26" class="archive-post-time">
-        2022-10-26
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rclone_synology/" class="archive-post-link">
-          Rclone 在群晖中挂载
-        </a>
-      </span>
-    </div>
   
-</section>
-
-
-
-
 
 
   
   
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-
-
-
 
         </div>
       </div>
@@ -514,6 +616,17 @@
 
 
 
+
+<script>
+  var remark_config = {
+    host: 'https:\/\/remark42.example.com',
+    site_id: 'remark',
+    components: [
+	    'embed',
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>新的 nat vps - whwh&#39;s blog for self</title>
+  <title>rclone配合qBittorrent在VPS使用 - whwh&#39;s blog for self</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="whwh13" /><meta name="description" content="买了个nat vps，确实难用，就这样吧，开摆" />
-<meta name="keywords" content="VPS, IPV6, NAT" />
+<meta name="author" content="whwh13" /><meta name="description" content="在VPS中设置qbittorrent搭配rclone完成追番追剧" />
+<meta name="keywords" content="rclone, Linux技巧" />
 
 
 
@@ -34,7 +34,7 @@
 <meta name="generator" content="Hugo 0.104.3" />
 
 
-<link rel="canonical" href="/post/new_vps_nat/" />
+<link rel="canonical" href="/post/rclone_vps/" />
 
 
 
@@ -60,20 +60,20 @@
 
 
 
-<meta property="og:title" content="新的 nat vps" />
-<meta property="og:description" content="买了个nat vps，确实难用，就这样吧，开摆" />
+<meta property="og:title" content="rclone配合qBittorrent在VPS使用" />
+<meta property="og:description" content="在VPS中设置qbittorrent搭配rclone完成追番追剧" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/new_vps_nat/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-10-27T21:42:45+08:00" />
+<meta property="og:url" content="/post/rclone_vps/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-10-30T14:36:33+08:00" />
 <meta property="article:modified_time" content="2022-10-30T14:42:11+08:00" />
 
-<meta itemprop="name" content="新的 nat vps">
-<meta itemprop="description" content="买了个nat vps，确实难用，就这样吧，开摆"><meta itemprop="datePublished" content="2022-10-27T21:42:45+08:00" />
+<meta itemprop="name" content="rclone配合qBittorrent在VPS使用">
+<meta itemprop="description" content="在VPS中设置qbittorrent搭配rclone完成追番追剧"><meta itemprop="datePublished" content="2022-10-30T14:36:33+08:00" />
 <meta itemprop="dateModified" content="2022-10-30T14:42:11+08:00" />
-<meta itemprop="wordCount" content="785">
-<meta itemprop="keywords" content="VPS,IPV6,NAT," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="新的 nat vps"/>
-<meta name="twitter:description" content="买了个nat vps，确实难用，就这样吧，开摆"/>
+<meta itemprop="wordCount" content="689">
+<meta itemprop="keywords" content="rclone,Linux技巧," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="rclone配合qBittorrent在VPS使用"/>
+<meta name="twitter:description" content="在VPS中设置qbittorrent搭配rclone完成追番追剧"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -359,7 +359,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">新的 nat vps</h1>
+      <h1 class="post-title">rclone配合qBittorrent在VPS使用</h1>
       
 
       <div class="post-meta">
@@ -374,22 +374,17 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2022-10-27">
-      2022-10-27
+    <time datetime="2022-10-30">
+      2022-10-30
     </time>
   </div>
 
-  
-    <div class="post-meta-lastmod">
-      (上次更新:
-      2022-10-30)
-    </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 785 字 -
+        约 689 字 -
         预计阅读 2 分钟
       </span>
 
@@ -416,101 +411,121 @@
 
     
     <div class="post-content">
-      <p>最近正值黑五，打算换一台VPS，正巧低价买了一台NAT型的vps，这里练一下手，记录一下新拿到VPS应该怎样操作
-我比较习惯的系统是Ubuntu，一般使用 20.04 ，这篇文章会建立在 ubuntu 20.04 的基础上</p>
-<h3 id="新建用户并添加sudo权限">新建用户并添加sudo权限</h3>
+      <p>同时在 VPS 和群晖中使用 rclone，VPS 配合 qbittorrent 的 rss 功能自动下载正在追剧和追番的视频，同时将其上传到 Google Drive 中。而群晖使用 rclone 挂载相应的文件夹通过 emby 观看视频。这里主要记录挂载 VPS 的过程。
+刚好最近买了一个 VPS，在这里记载配置过程。
+参考教程还是这个：<a href="https://blog.csdn.net/diqiudq/article/details/126070602">“申请google drive api并使用rclone挂载团队盘为本地磁盘”</a></p>
+<h3 id="为-api-创建新的应用凭据">为 API 创建新的应用凭据</h3>
+<p>由于之前群晖和 VPS 共用凭据导致两者掉线，所以这里新建一个</p>
+<p>创建凭据，选择 OAuth 客户端，应用类型选择 桌面应用，获得客户端 ID 和密钥</p>
+<h3 id="下载-rclone-并配置-google-drive">下载 Rclone 并配置 Google Drive</h3>
+<p>使用想要使用脚本的用户执行命令</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4">4</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># adduser 用户名</span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># passwd 用户名</span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># visudo</span>
-</span></span><span style="display:flex;"><span>添加 用户名 <span style="color:#bb60d5">ALL</span><span style="color:#666">=(</span>ALL:ALL<span style="color:#666">)</span> ALL
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install fuse -y
+</span></span><span style="display:flex;"><span>curl https://rclone.org/install.sh | sudo bash
+</span></span><span style="display:flex;"><span>rclone config
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="修改ssh端口以及密钥">修改ssh端口以及密钥</h3>
+</div><p>根据流程配置 google drive，使用上面创建的客户端 ID 和密钥，记下设置的名称，配置注意点在<a href="https://blog.whwh13.tk/post/rclone_synology/">Rclone 在群晖中挂载</a>中有写</p>
+<p>配合 qBittorrent 不需要挂载，只需要使用脚本即可</p>
+<h3 id="下载安装-qbittorrent">下载安装 qBittorrent</h3>
+<p><a href="https://www.jianshu.com/p/c8e323ff1890">教程</a></p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># su whwh</span>
-</span></span><span style="display:flex;"><span><span style="color:#007020">cd</span> ~ 
-</span></span><span style="display:flex;"><span>mkdir .ssh
-</span></span><span style="display:flex;"><span>vim .ssh/authorized_keys
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ sudo vim /etc/ssh/sshd_config
-</span></span><span style="display:flex;"><span>更改 PermitRootLogin no
-</span></span><span style="display:flex;"><span>PasswordAuthentication no
-</span></span><span style="display:flex;"><span>AddressFamily any                       /*用于启用ipv6 ssh*/
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo systemctl reload sshd
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install software-properties-common -y
+</span></span><span style="display:flex;"><span>sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install qbittorrent-nox -y
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>还需要更改端口，但是我买的这个NAT型的，有一个自动的端口映射，感觉不需要改端口</p>
-<h3 id="软件更新">软件更新</h3>
+</div><p>设置启动qbittorrent</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt upgrade
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo vim /etc/systemd/system/qbittorrent-nox.service
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="搭建探针">搭建探针</h3>
-<p>当时买这个机子的时候是看重的价格便宜，并没有想好要拿来做什么，再加上这个ip是被墙的，也搭建不了梯子，索性就搭建个<a href="https://nezhahq.github.io/">探针</a>随便玩玩
-<a href="https://zhuanlan.zhihu.com/p/337443320">参考</a>
-失败了，精简系统太精简，连 /etc/sudoers 都没有。而更习惯用的 22.04 ，甚至因为内存太小安装不了软件
-太难用了，这个就放着吃灰吧
-尝试用ipv6搭建一个梯子，最后因为systemctl的问题，不会设置代理了，就这样吧</p>
-<h3 id="搭建梯子">搭建梯子</h3>
-<p>今天突然心血来潮，果然我还是喜欢折腾，换了一个系统 centos7，然后<a href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">一键脚本</a>就成功了，当然，在安装的时候需要同时把 IPV6 和 IPV4 解析到同一个域名，然后脚本之后就能用了
-不过虽然速度还算不错，但是延迟很高，不是很好用</p>
-<h3 id="ssh-配置">ssh 配置</h3>
-<p>因为是 nat 型机子，在连接机子的 ssh 只能使用服务商提供的指定端口（经鉴定是其做了端口映射，机子仍然要开放 22 端口）。于是就想能不能通过 IPV6 自定义端口，同时考虑到不是任何时候都有 IPV6，所以对应的 22 端口也要保留。同时机子的 IPV6 的 22 端口被墙了，不能使用，必须换个端口</p>
-<p>修改 <code>/etc/ssh/sshd_config</code>，将原来的端口注释掉，通过<code>ListenAddress</code>项配置端口监听</p>
+</div><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-10">10</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#666">[</span>Unit<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">Description</span><span style="color:#666">=</span>qBittorrent-nox
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">After</span><span style="color:#666">=</span>network.target
+</span></span><span style="display:flex;"><span><span style="color:#666">[</span>Service<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">User</span><span style="color:#666">=</span>root
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">Type</span><span style="color:#666">=</span>forking
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">RemainAfterExit</span><span style="color:#666">=</span>yes
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">ExecStart</span><span style="color:#666">=</span>/usr/bin/qbittorrent-nox -d
+</span></span><span style="display:flex;"><span><span style="color:#666">[</span>Install<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">WantedBy</span><span style="color:#666">=</span>multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重新载入</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2">2</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3">3</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4">4</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-5">5</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-6">6</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-7">7</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-8">8</a>
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-9">9</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2">2</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> ListenAddress
-</span></span><span style="display:flex;"><span>    指定 sshd<span style="color:#666">(</span>8<span style="color:#666">)</span> 监听的网络地址，默认监听所有地址。可以使用下面的格式：
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ListenAddress host|IPv4_addr|IPv6_addr
-</span></span><span style="display:flex;"><span>        ListenAddress host|IPv4_addr:port
-</span></span><span style="display:flex;"><span>        ListenAddress <span style="color:#666">[</span>host|IPv6_addr<span style="color:#666">]</span>:port
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>        如果未指定 port ，那么将使用 Port 指令的值。
-</span></span><span style="display:flex;"><span>        可以使用多个 ListenAddress 指令监听多个地址。
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl start qbittorrent-nox
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>注意监听 ipv6 时的中括号。</p>
+</div><p>分别对应 停止和开机自启</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl stop qbittorrent-nox
+</span></span><span style="display:flex;"><span>sudo systemctl <span style="color:#007020">enable</span> qbittorrent-nox
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>默认端口是<strong>8080</strong>，默认用户j<strong>admin</strong>，默认密码<strong>adminadmin</strong></p>
+<h3 id="配置脚本">配置脚本</h3>
+<p><a href="https://www.idcfq.com/632.html">教程1</a>
+<a href="https://github.com/whwh13/qb_rclone">主要参考，防删库已fork</a>
+在具体使用上，参考教程中是通过使用指定的 tag 才上传，我稍微修改成即便没有 tag 也会上传(库中qb_auto_rclone1.sh)</p>
+<p>主要是需求不一样，原教程中用的服务器应该有较大的存储空间或者有把文件保留在本地的需求</p>
+<p>而我的同步配置放在 VPS 上，存储空间比较小，主要是通过 qBittorrent 配套的上传到多少自动删除的功能自动追番，所以需要自动化的上传。</p>
+<h4 id="设置定时执行">设置定时执行</h4>
+<p>需要在 qbittorrent 中先配置好对应的 tag</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span>*/2 * * * * bash qb_auto_rclone.sh          /*注意路径*/
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -524,9 +539,8 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/vps/">VPS</a>
-            <a href="/tags/ipv6/">IPV6</a>
-            <a href="/tags/nat/">NAT</a>
+          <a href="/tags/rclone/">rclone</a>
+            <a href="/tags/linux%E6%8A%80%E5%B7%A7/">Linux技巧</a>
             
         </div>
 
@@ -534,22 +548,9 @@
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/rclone_vps/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">rclone配合qBittorrent在VPS使用</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/vps_purchase/">
-            <span class="next-text nav-default">Vps</span>
+          <a class="next" href="/post/new_vps_nat/">
+            <span class="next-text nav-default">新的 nat vps</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

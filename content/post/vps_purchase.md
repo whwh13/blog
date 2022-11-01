@@ -2,7 +2,7 @@
 title: "Vps"
 date: 2022-10-26T09:16:52+08:00
 lastmod: 2022-10-26T09:16:52+08:00
-draft: true
+draft: false
 keywords: ["VPS","购物"]
 description: "记录对比各个各个VPS运营商的过程，根据需求选择合适的VPS"
 tags: ["VPS","购物"]
@@ -39,7 +39,7 @@ mathjax: false
 几个相对用的比较多的测试脚本，不一定完全安全，用之前先看看
 
 ```sh
-wget -qO- git.io/superbench.sh | bash
+wget -qO-  git.io/superbench.sh | bash
 bash <(curl -Lso- https://git.io/superspeed.sh)
 wget -q https://github.com/Aniverse/A/raw/i/a && bash a
 ```
@@ -66,4 +66,10 @@ wget -q https://github.com/Aniverse/A/raw/i/a && bash a
 
 原理是数个机子共用一个IP，每个机子只能使用有限个端口，通过这种方式分担IP的价格，能做到很低的价格
 [2刀用优惠码 LEB-NAT-128MB](https://hosting.gullo.me/order/config/index/nat-ipv4-vps-de/?group_id=5&pricing_id=55#)
-[nat型VPS](https://blog.whwh13.tk/post/new_vps/)
+[nat型VPS](https://blog.whwh13.tk/post/new_vps_nat/)
+
+### 临时使用
+
+在买之前的 NAT 型 VPS 的时候买了一张 5 美刀的信用卡，还剩下 3 美刀，也就想着物尽其用买了一个 1 个月的 VPS，用于等黑五这段时间的备用
+[$2.75 4核 4G 80SSD](https://lowendtalk.com/discussion/181836/flash-sale-50-off-for-2-months-directadmin-softaculous-kvm-virtualizor-nvme-storage)
+[配置Rclone](https://blog.whwh13.tk/post/rclone_vps/)

@@ -42,11 +42,14 @@ mathjax: false
 在本机的电脑终端运行rclone authorize时总会无法获取cookie，这是因为终端不会使用系统代理，需要运行下列代码为终端提供代理。
 
 ```sh
+poweshell:
+$Env:http_proxy="http://127.0.0.1:port"
+$Env:https_proxy="http://127.0.0.1:port"
+
+cmd & linux
 set http_proxy=http://127.0.0.1：port
 set https_proxy=http://127.0.0.1：port
 ```
-
-###### **注意**：proxy 与 = 之间不应该有空格，这也是我使用虚拟机的原因（以为实体机不能代理）
 
 ##### 虚拟机下载速度
 

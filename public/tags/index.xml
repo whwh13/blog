@@ -6,7 +6,25 @@
     <description>Recent content in Tags on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 Oct 2022 21:42:45 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 14:36:33 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux技巧</title>
+      <link>/tags/linux%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 30 Oct 2022 14:36:33 +0800</pubDate>
+      
+      <guid>/tags/linux%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rclone</title>
+      <link>/tags/rclone/</link>
+      <pubDate>Sun, 30 Oct 2022 14:36:33 +0800</pubDate>
+      
+      <guid>/tags/rclone/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>IPV6</title>
       <link>/tags/ipv6/</link>
@@ -35,20 +53,11 @@
     </item>
     
     <item>
-      <title>Linux技巧</title>
-      <link>/tags/linux%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Wed, 26 Oct 2022 09:13:50 +0800</pubDate>
+      <title>购物</title>
+      <link>/tags/%E8%B4%AD%E7%89%A9/</link>
+      <pubDate>Wed, 26 Oct 2022 09:16:52 +0800</pubDate>
       
-      <guid>/tags/linux%E6%8A%80%E5%B7%A7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rclone</title>
-      <link>/tags/rclone/</link>
-      <pubDate>Wed, 26 Oct 2022 09:13:50 +0800</pubDate>
-      
-      <guid>/tags/rclone/</guid>
+      <guid>/tags/%E8%B4%AD%E7%89%A9/</guid>
       <description></description>
     </item>
     
