@@ -1,5 +1,5 @@
 ---
-title: "Vps_azure"
+title: "vps_azure"
 date: 2022-11-05T14:58:49+08:00
 lastmod: 2022-11-05T14:58:49+08:00
 draft: false
@@ -50,11 +50,11 @@ disable-getting-started-override: true  # 关闭code-server促销消息
 sudo apt update && sudo apt install nginx
 ```
 
-#### 设置目录用来存放证书和配置网站
+#### 设置目录用来存放证书
 
 ```sh
-mkdir -p ~/www
-mkdir -p ~/www/cert
+mkdir -p ~/etc/nginx/ssl
+mkdir -p ~/etc/nginx/ssl/example.com
 ```
 
 #### 配置nginx
@@ -71,7 +71,7 @@ sudo vim /etc/nginx/nginx.conf
 
 #### 安装acme.sh
 
-由于我是用的反代的方式代理的nginx，因此不能使用根目录验证acme.sh，而acme直接验证反代的原理是把nginx改变成预设网站，然后验证之后回复原状，因此需要root用户安装
+由于我是用的**反代**的方式代理的nginx，因此不能使用根目录验证acme.sh，而acme直接验证反代的原理是把nginx改变成预设网站，然后验证之后回复原状，因此需要**root用户**安装
 
 ```sh
 curl https://get.acme.sh | sh -s email=my@example.com  #注意修改邮箱
@@ -92,7 +92,7 @@ acme.sh --upgrade --auto-upgrade  #设置自动升级
 
 举例`acme.sh --issue --server letsencrypt --test -d www.mydomain.com --nginx --keylength ec-256`
 
-**注意**：上面的举例用了`--test`测试成功之后应当再正常使用，需要注意参数`--force`
+**注意**：上面的举例用了`--test`测试成功之后应当再正常使用，需要添加参数`--force`
 
 #### 安装证书
 
@@ -116,46 +116,46 @@ xray设置，配置文件在`/usr/local/etc/xray/config.json``/etc/nginx/nginx.c
 
 ```json
 {
-        "log": {
-                "access": "/var/log/xray/access.log",
-                "error": "/var/log/xray/error.log",
-                "loglevel": "warning"
-        },
-        "inbounds": [
-            {
-           "port": 11111,               # 端口
-           "listen":"127.0.0.1",
-           "protocol": "vmess",
-           "settings": {
-                "clients": [
+    "log": {
+        "access": "/var/log/xray/access.log",
+        "error": "/var/log/xray/error.log",
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "port": 11111,               # 端口
+            "listen":"127.0.0.1",
+            "protocol": "vmess",
+            "settings": {
+            "clients": [
                 {
                     "id": "uuid",
                     "alterId": 0
                 }
-                ]
-           },
-       "streamSettings": {
-            "network": "ws",
-            "wsSettings": {
-            "path": "/path"
+            ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/path"
+                }
             }
-        }
-     }                              
+        }                              
     ],                              
-      "outbounds": [
-              {
-              "protocol": "freedom",
-              "settings": {}
-              }
-      ],
-     "dns": {
-         "servers": [
-                "https+local://dns.google/dns-query",
-                "8.8.8.8",
-                "1.1.1.1",
-                "localhost"
-           ]
-      }
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ],
+    "dns": {
+        "servers": [
+            "https+local://dns.google/dns-query",
+            "8.8.8.8",
+            "1.1.1.1",
+            "localhost"
+        ]
+    }
 }
 ```
 
