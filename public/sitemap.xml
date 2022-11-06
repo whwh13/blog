@@ -2,113 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <loc>/tags/azure/</loc>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/tags/linux%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/linux%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rclone/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/rclone_vps/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ipv6/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nat/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/vps/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/vps_azure/</loc>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-11-05T14:58:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rclone/</loc>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/rclone_vps/</loc>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ipv6/</loc>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nat/</loc>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/new_vps_nat/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/vps_purchase/</loc>
-    <lastmod>2022-10-26T09:16:52+08:00</lastmod>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/%E8%B4%AD%E7%89%A9/</loc>
-    <lastmod>2022-10-26T09:16:52+08:00</lastmod>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/rclone_synology/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/%E5%BD%B1%E8%A7%86%E5%BA%93/</loc>
-    <lastmod>2022-10-30T14:42:11+08:00</lastmod>
+    <lastmod>2022-11-01T23:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

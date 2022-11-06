@@ -6,7 +6,16 @@
     <description>Recent content in VPS on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 Oct 2022 21:42:45 +0800</lastBuildDate><atom:link href="/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 14:58:49 +0800</lastBuildDate><atom:link href="/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vps_azure</title>
+      <link>/post/vps_azure/</link>
+      <pubDate>Sat, 05 Nov 2022 14:58:49 +0800</pubDate>
+      
+      <guid>/post/vps_azure/</guid>
+      <description>&lt;p&gt;折腾是人类的本性！&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>新的 nat vps</title>
       <link>/post/new_vps_nat/</link>

@@ -6,7 +6,25 @@
     <description>Recent content in Tags on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Oct 2022 14:36:33 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 14:58:49 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure</title>
+      <link>/tags/azure/</link>
+      <pubDate>Sat, 05 Nov 2022 14:58:49 +0800</pubDate>
+      
+      <guid>/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPS</title>
+      <link>/tags/vps/</link>
+      <pubDate>Sat, 05 Nov 2022 14:58:49 +0800</pubDate>
+      
+      <guid>/tags/vps/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux技巧</title>
       <link>/tags/linux%E6%8A%80%E5%B7%A7/</link>
@@ -40,15 +58,6 @@
       <pubDate>Thu, 27 Oct 2022 21:42:45 +0800</pubDate>
       
       <guid>/tags/nat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VPS</title>
-      <link>/tags/vps/</link>
-      <pubDate>Thu, 27 Oct 2022 21:42:45 +0800</pubDate>
-      
-      <guid>/tags/vps/</guid>
       <description></description>
     </item>
     
