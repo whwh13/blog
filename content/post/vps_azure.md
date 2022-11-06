@@ -226,3 +226,121 @@ server {
 ### code-server 配置
 
 code-server 并没有一些独属于 vscode 的插件，但是可以通过[微软插件市场](https://marketplace.visualstudio.com/search?target=VSCode)下载对应的nsix格式，上传之后安装
+
+主要用code-server在不方便用电脑的时候编写C语言程序，所以对其进行一下C语言配置
+
+1. 配置编译环境
+
+    ```sh
+    sudo apt install gcc g++ gdb
+    ```
+
+2. 安装拓展
+
+    ```name
+    'C/C++' 'C/C++ Extension Pack' 'C/C++ Themes' 'CMake'
+    'Cmake Tools' 'filesize' 'Markdown Preview Github Styling'
+    'markdownlint' 'Chinese (Simplified)'
+    ```
+
+3. 配置任务
+
+    配置文件`tasks.json`,该文件主要是建立两个任务，分别命名为`single file build`和`run and pause`，并且设置在执行`run and pause`之前一定会执行一次`single file build`
+
+    ```json
+    {
+    "tasks": [
+        {
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/.build/${fileBasenameNoExtension}",
+                "-std=c11",
+                "-pedantic",
+                "-Wall",
+                "-Wextra"
+            ],
+            "command": "/usr/bin/gcc-9",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "single file build",
+            "presentation": {
+                "clear": true,
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "reveal": "always",
+                "showReuseMessage": true
+            },
+            "problemMatcher": "$gcc",
+            "type": "process",
+            "detail": "自己配置测试"
+        },
+        {
+            "args": [],
+            "command": "${workspaceFolder}/.build/${fileBasenameNoExtension}",
+            "dependsOn": "single file build",
+            "label": "run and pause",
+            "presentation": {
+                "clear": false,
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "reveal": "always",
+                "showReuseMessage": true
+            },
+            "problemMatcher": [],
+            "type": "process"
+        }
+    ],
+    "version": "2.0.0"
+    }
+
+    ```
+
+    配置文件`launch.json`，该文件是配置任务`single file debug`，并将`single file build`设置为前置任务
+
+    ```json
+    {
+    "version": "0.2.0",
+    "configurations": [
+    {
+      "MIMode": "gdb",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "name": "single file debug",
+      "preLaunchTask": "single file build",
+      "program": "${workspaceFolder}/.build/${fileBasenameNoExtension}",
+      "request": "launch",
+      "stopAtEntry": false,
+      "type": "cppdbg"
+    }
+        ]
+    }
+
+    ```
+
+4. 配置快捷建
+
+    如果是通过上面的问价配置，系统会默认把`F5`配置成debug，即任务`single file debug`。会默认把`Ctrl + Shift + B`配置成build，即任务`single file build`。此时`F6`命令会打开任务列表，也可以不配置直接使用，选择`run and pause`即可
+
+    也可以编辑 `~/.local/share/code-server/User/keybindings.json` 文件（目录不一定相同，不过和全局的`settings.json`相同目录），添加
+
+    ```json
+    [
+        {
+      "args": "run and pause",
+      "command": "workbench.action.tasks.runTask",
+      "key": "f6"
+        }
+    ]
+
+    ```
+
+    把F6设定为执行`run and pause`任务
