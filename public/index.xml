@@ -740,8 +740,8 @@ server {
 &lt;a href=&#34;https://dedipath.com/&#34;&gt;DDP&lt;/a&gt;
 &lt;a href=&#34;https://cloudcone.com/&#34;&gt;CC&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;vps-与-bt-下载&#34;&gt;VPS 与 BT 下载&lt;/h3&gt;
-&lt;p&gt;很多云服务提供商会禁止BT下载，主要原因是版权DMAC相关会被投诉。所以下载国内发布的一般没问题（？）
-&lt;img src=&#34;https://raw.githubusercontent.com/whwh13/picgo/master/2022/10/26/20221026200148.jpg&#34; alt=&#34;一些人的经验之谈？&#34;&gt;&lt;/p&gt;
+&lt;p&gt;很多云服务提供商会禁止BT下载，主要原因是版权DMAC相关会被投诉。所以下载国内发布的一般没问题（？）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/whwh13/picgo/master/2022/10/26/20221026200148.jpg&#34; alt=&#34;一些人的经验之谈？&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;seedbox&#34;&gt;SEEDBOX&lt;/h3&gt;
 &lt;p&gt;在查找VPS对于BT的容忍程度的时候了解到的 seedbox ，其本质上类似于只能使用部分BT软件和文件管理器的VPS，不能自己安装软件
 &lt;a href=&#34;https://giga-rapid.com/products/seedboxes&#34;&gt;Gigabox 1欧元1个月&lt;/a&gt;&lt;/p&gt;

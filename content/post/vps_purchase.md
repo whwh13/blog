@@ -55,6 +55,7 @@ wget -q https://github.com/Aniverse/A/raw/i/a && bash a
 ### VPS 与 BT 下载
 
 很多云服务提供商会禁止BT下载，主要原因是版权DMAC相关会被投诉。所以下载国内发布的一般没问题（？）
+
 ![一些人的经验之谈？](https://raw.githubusercontent.com/whwh13/picgo/master/2022/10/26/20221026200148.jpg)
 
 ### SEEDBOX
