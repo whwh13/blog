@@ -3,7 +3,7 @@ title: "vps_azure"
 date: 2022-11-05T14:58:49+08:00
 lastmod: 2022-11-05T14:58:49+08:00
 draft: false
-keywords: ["VPS","azure"]
+keywords: []
 description: "通过学生认证白嫖了微软的服务器，配置一下code-serve"
 tags: ["VPS","azure"]
 categories: ["Linux技巧"]

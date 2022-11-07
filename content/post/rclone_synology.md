@@ -3,7 +3,7 @@ title: "Rclone 在群晖中挂载"
 date: 2022-10-26T09:13:50+08:00
 lastmod: 2022-10-26T09:13:50+08:00
 draft: false
-keywords: ["rclone","Linux技巧","影视库"]
+keywords: []
 description: "在群晖上设置rclone并配置自动挂载"
 tags: ["rclone","Linux技巧","影视库"]
 categories: ["Linux技巧"]
