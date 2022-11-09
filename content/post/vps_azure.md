@@ -344,3 +344,31 @@ code-server 并没有一些独属于 vscode 的插件，但是可以通过[微�
     ```
 
     把F6设定为执行`run and pause`任务
+
+5. 开启swap
+
+    code-server 经常会无缘无故的不能用，报`502`错误
+
+    这是因为 code-server 更多的占用内存，通过 azure 后台监控看到内存经常占满。在没有办法增加内存的情况下，只有开启 swap 这样一个办法了把
+
+    参考教程[在 Ubuntu 上开启 Swap](https://www.qinwg.cn/n/linux/linux-swap.html)
+
+    ```bash
+    free -m       ## 查看当前内存使用情况以及是否开启 swap [Swap: 0 0 0]表示未开启
+    dd if=/dev/zero of=/swapfile count=2048 bs=1M       ## 创建名为 swapfile 的 swap 空间，大小为 2048MB
+    ls / | grep swapfile        ##查看是否创建成功
+    chmod 600 /swapfile
+    mkswap /swapfile
+    ```
+
+    做完这些操作应该会有类似输出 `Setting up swapspace version 1, size = 2097148 KiB no label, UUID=ff3fc469-9c4b-4913-b653-ec53d6460d0e`
+
+    这样 swap 文件就创建完成了
+
+    开启swap
+
+    ```bash
+    swapon /swapfile            ##开启
+    free -m                     ##查看是否开启成功
+    vim /etc/fstab     ## 在最后添加 /swapfile none swap sw 0 0 设置开机自启
+    ```

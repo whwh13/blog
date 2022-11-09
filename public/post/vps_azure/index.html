@@ -64,12 +64,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/vps_azure/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-11-05T14:58:49+08:00" />
-<meta property="article:modified_time" content="2022-11-06T17:30:01+08:00" />
+<meta property="article:modified_time" content="2022-11-07T16:47:42+08:00" />
 
 <meta itemprop="name" content="vps_azure">
 <meta itemprop="description" content="通过学生认证白嫖了微软的服务器，配置一下code-serve"><meta itemprop="datePublished" content="2022-11-05T14:58:49+08:00" />
-<meta itemprop="dateModified" content="2022-11-06T17:30:01+08:00" />
-<meta itemprop="wordCount" content="2251">
+<meta itemprop="dateModified" content="2022-11-07T16:47:42+08:00" />
+<meta itemprop="wordCount" content="2501">
 <meta itemprop="keywords" content="VPS,azure," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="vps_azure"/>
 <meta name="twitter:description" content="通过学生认证白嫖了微软的服务器，配置一下code-serve"/>
@@ -381,14 +381,14 @@
   
     <div class="post-meta-lastmod">
       (上次更新:
-      2022-11-06)
+      2022-11-07)
     </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2251 字 -
+        约 2501 字 -
         预计阅读 5 分钟
       </span>
 
@@ -884,6 +884,43 @@ server {
 </div>
 </div><p>把F6设定为执行<code>run and pause</code>任务</p>
 </li>
+<li>
+<p>开启swap</p>
+<p>code-server 经常会无缘无故的不能用，报<code>502</code>错误</p>
+<p>这是因为 code-server 更多的占用内存，通过 azure 后台监控看到内存经常占满。在没有办法增加内存的情况下，只有开启 swap 这样一个办法了把</p>
+<p>参考教程<a href="https://www.qinwg.cn/n/linux/linux-swap.html">在 Ubuntu 上开启 Swap</a></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>free -m       <span style="color:#60a0b0;font-style:italic">## 查看当前内存使用情况以及是否开启 swap [Swap: 0 0 0]表示未开启</span>
+</span></span><span style="display:flex;"><span>dd <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/zero <span style="color:#bb60d5">of</span><span style="color:#666">=</span>/swapfile <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">2048</span> <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>1M       <span style="color:#60a0b0;font-style:italic">## 创建名为 swapfile 的 swap 空间，大小为 2048MB</span>
+</span></span><span style="display:flex;"><span>ls / | grep swapfile        <span style="color:#60a0b0;font-style:italic">##查看是否创建成功</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#40a070">600</span> /swapfile
+</span></span><span style="display:flex;"><span>mkswap /swapfile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>做完这些操作应该会有类似输出 <code>Setting up swapspace version 1, size = 2097148 KiB no label, UUID=ff3fc469-9c4b-4913-b653-ec53d6460d0e</code></p>
+<p>这样 swap 文件就创建完成了</p>
+<p>开启swap</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>swapon /swapfile            <span style="color:#60a0b0;font-style:italic">##开启</span>
+</span></span><span style="display:flex;"><span>free -m                     <span style="color:#60a0b0;font-style:italic">##查看是否开启成功</span>
+</span></span><span style="display:flex;"><span>vim /etc/fstab     <span style="color:#60a0b0;font-style:italic">## 在最后添加 /swapfile none swap sw 0 0 设置开机自启</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
     </div>
 
