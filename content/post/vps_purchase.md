@@ -1,5 +1,5 @@
 ---
-title: "Vps"
+title: "VPS"
 date: 2022-10-26T09:16:52+08:00
 lastmod: 2022-10-26T09:16:52+08:00
 draft: false

@@ -19,6 +19,16 @@
     </item>
     
     <item>
+      <title>新的 nat vps</title>
+      <link>/post/new_vps_nat/</link>
+      <pubDate>Thu, 27 Oct 2022 21:42:45 +0800</pubDate>
+      
+      <guid>/post/new_vps_nat/</guid>
+      <description>&lt;p&gt;最近正值黑五，打算换一台VPS，正巧低价买了一台NAT型的vps，这里练一下手，记录一下新拿到VPS应该怎样操作
+我比较习惯的系统是Ubuntu，一般使用 20.04 ，这篇文章会建立在 ubuntu 20.04 的基础上&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Rclone 在群晖中挂载</title>
       <link>/post/rclone_synology/</link>
       <pubDate>Wed, 26 Oct 2022 09:13:50 +0800</pubDate>

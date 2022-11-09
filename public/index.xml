@@ -6,10 +6,99 @@
     <description>Recent content on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Nov 2022 14:58:49 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Nov 2022 16:38:06 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C语言第五章思考题</title>
+      <link>/post/c_chapter5_thinking/</link>
+      <pubDate>Mon, 07 Nov 2022 16:38:06 +0800</pubDate>
+      
+      <guid>/post/c_chapter5_thinking/</guid>
+      
+        <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;a.30;b.27;c.1;d.9&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a.x=6;&lt;/p&gt;
+&lt;p&gt;b.x=52;&lt;/p&gt;
+&lt;p&gt;c.x=0;&lt;/p&gt;
+&lt;p&gt;d.x=13;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a.&lt;del&gt;36.25&lt;/del&gt;;&lt;font color=&#34;#dd0000&#34;&gt;37.5（数都能算错来）&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;b.1.5;&lt;/p&gt;
+&lt;p&gt;c.35;&lt;/p&gt;
+&lt;p&gt;d.37&lt;/p&gt;
+&lt;p&gt;e.&lt;del&gt;36.25&lt;/del&gt;;&lt;font color=&#34;#dd0000&#34;&gt;37.5（数都能算错来）&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;f.35.0;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;头文件、1/i值是int类型，始终为0、while复合语句花括号、i++、返回值&lt;/p&gt;
+&lt;p&gt;&lt;font color=&#34;#dd0000&#34;&gt;int一行结尾不是分号，打印值中没有换行&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;初始的sec值可能是不符合要求，直接不进入循环
+输入值为0或负数时不能直接退出，会报错&lt;/p&gt;
+&lt;p&gt;&lt;font color=&#34;#dd0000&#34;&gt;处理类似问题的常用手段就是两次 scanf ，视为以后的解决方案&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无法重复套娃字符串，被转换说明所指代的字符串中存在转换说明不会套娃&lt;/p&gt;
+&lt;p&gt;%s! C is cool!&lt;/p&gt;
+&lt;p&gt;! C is cool!&lt;/p&gt;
+&lt;p&gt;11&lt;/p&gt;
+&lt;p&gt;11&lt;/p&gt;
+&lt;p&gt;12&lt;/p&gt;
+&lt;p&gt;11&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SOS:4 4.00&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打印结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;3&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;4&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;5&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;6&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;7&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;8&lt;/span&gt;    &lt;span style=&#34;color:#40a070&#34;&gt;9&lt;/span&gt;   &lt;span style=&#34;color:#40a070&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;见 t9.c 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a.    1    2&lt;/p&gt;
+&lt;p&gt;b. 101&lt;/p&gt;
+&lt;p&gt;101&lt;/p&gt;
+&lt;p&gt;102&lt;/p&gt;
+&lt;p&gt;102&lt;/p&gt;
+&lt;p&gt;c.stuvw&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;COMPUTER BYTES DOG
+That&amp;rsquo;s all.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;由于没有括起来，这个程序不会停止&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a.x=x+10&lt;/p&gt;
+&lt;p&gt;b.x++&lt;/p&gt;
+&lt;p&gt;c.c=(a+b)*2&lt;/p&gt;
+&lt;p&gt;d.c=2&lt;em&gt;a+2&lt;/em&gt;b&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a.x&amp;ndash;&lt;/p&gt;
+&lt;p&gt;b.m=n%k&lt;/p&gt;
+&lt;p&gt;c.q/(b-a)&lt;/p&gt;
+&lt;p&gt;d.x=(a+b)/(c*d)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
+    </item>
     
     <item>
       <title>vps_azure</title>
@@ -743,7 +832,7 @@ server {
     </item>
     
     <item>
-      <title>Vps</title>
+      <title>VPS</title>
       <link>/post/vps_purchase/</link>
       <pubDate>Wed, 26 Oct 2022 09:16:52 +0800</pubDate>
       

@@ -5,7 +5,7 @@ lastmod: 2022-10-27T21:42:45+08:00
 draft: false
 keywords: []
 description: "买了个nat vps，确实难用，就这样吧，开摆"
-tags: ["VPS","IPV6","NAT"]
+tags: ["VPS","IPV6","NAT","Linux技巧"]
 categories: ["Linux技巧"]
 author: "whwh13"
 

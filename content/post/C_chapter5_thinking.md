@@ -2,7 +2,7 @@
 title: "C语言第五章思考题"
 date: 2022-11-07T16:38:06+08:00
 lastmod: 2022-11-07T16:38:06+08:00
-draft: true
+draft: false
 keywords: []
 description: "C语言第五章思考题"
 tags: ["C语言","学习","思考题"]
