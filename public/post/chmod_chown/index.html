@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>C语言第五章思考题 - whwh&#39;s blog for self</title>
+  <title>Linux 文件权限学习 - whwh&#39;s blog for self</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,7 +22,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="whwh13" /><meta name="description" content="C语言第五章思考题" />
+<meta name="author" content="whwh13" /><meta name="description" content="学习 chmod chown 以及Linux的权限相关问题" />
 
 
 
@@ -33,7 +33,7 @@
 <meta name="generator" content="Hugo 0.104.3" />
 
 
-<link rel="canonical" href="/post/c_chapter5_thinking/" />
+<link rel="canonical" href="/post/chmod_chown/" />
 
 
 
@@ -59,20 +59,20 @@
 
 
 
-<meta property="og:title" content="C语言第五章思考题" />
-<meta property="og:description" content="C语言第五章思考题" />
+<meta property="og:title" content="Linux 文件权限学习" />
+<meta property="og:description" content="学习 chmod chown 以及Linux的权限相关问题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/c_chapter5_thinking/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-11-07T16:38:06+08:00" />
-<meta property="article:modified_time" content="2022-11-09T11:44:57+08:00" />
+<meta property="og:url" content="/post/chmod_chown/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-09T11:26:08+08:00" />
+<meta property="article:modified_time" content="2022-11-09T11:26:08+08:00" />
 
-<meta itemprop="name" content="C语言第五章思考题">
-<meta itemprop="description" content="C语言第五章思考题"><meta itemprop="datePublished" content="2022-11-07T16:38:06+08:00" />
-<meta itemprop="dateModified" content="2022-11-09T11:44:57+08:00" />
-<meta itemprop="wordCount" content="281">
-<meta itemprop="keywords" content="C语言,学习,思考题," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="C语言第五章思考题"/>
-<meta name="twitter:description" content="C语言第五章思考题"/>
+<meta itemprop="name" content="Linux 文件权限学习">
+<meta itemprop="description" content="学习 chmod chown 以及Linux的权限相关问题"><meta itemprop="datePublished" content="2022-11-09T11:26:08+08:00" />
+<meta itemprop="dateModified" content="2022-11-09T11:26:08+08:00" />
+<meta itemprop="wordCount" content="751">
+<meta itemprop="keywords" content="Linux技巧,权限," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux 文件权限学习"/>
+<meta name="twitter:description" content="学习 chmod chown 以及Linux的权限相关问题"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -358,7 +358,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">C语言第五章思考题</h1>
+      <h1 class="post-title">Linux 文件权限学习</h1>
       
 
       <div class="post-meta">
@@ -373,27 +373,22 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2022-11-07">
-      2022-11-07
+    <time datetime="2022-11-09">
+      2022-11-09
     </time>
   </div>
 
-  
-    <div class="post-meta-lastmod">
-      (上次更新:
-      2022-11-09)
-    </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 281 字 -
-        预计阅读 1 分钟
+        约 751 字 -
+        预计阅读 2 分钟
       </span>
 
     <div class="post-meta-category">
-        <a href="/categories/c%E6%80%9D%E8%80%83%E9%A2%98/"> C思考题 </a>
+        <a href="/categories/linux%E6%8A%80%E5%B7%A7/"> Linux技巧 </a>
           
       </div>
 
@@ -415,85 +410,71 @@
 
     
     <div class="post-content">
-      <ol>
-<li>
-<p>a.30;b.27;c.1;d.9</p>
-</li>
-<li>
-<p>a.x=6;</p>
-<p>b.x=52;</p>
-<p>c.x=0;</p>
-<p>d.x=13;</p>
-</li>
-<li>
-<p>a.<del>36.25</del>;<font color="#dd0000">37.5（数都能算错来）</font></p>
-<p>b.1.5;</p>
-<p>c.35;</p>
-<p>d.37</p>
-<p>e.<del>36.25</del>;<font color="#dd0000">37.5（数都能算错来）</font></p>
-<p>f.35.0;</p>
-</li>
-<li>
-<p>头文件、1/i值是int类型，始终为0、while复合语句花括号、i++、返回值</p>
-<p><font color="#dd0000">int一行结尾不是分号，打印值中没有换行</font></p>
-</li>
-<li>
-<p>初始的sec值可能是不符合要求，直接不进入循环
-输入值为0或负数时不能直接退出，会报错</p>
-<p><font color="#dd0000">处理类似问题的常用手段就是两次 scanf ，视为以后的解决方案</font></p>
-</li>
-<li>
-<p>无法重复套娃字符串，被转换说明所指代的字符串中存在转换说明不会套娃</p>
-<p>%s! C is cool!</p>
-<p>! C is cool!</p>
-<p>11</p>
-<p>11</p>
-<p>12</p>
-<p>11</p>
-</li>
-<li>
-<p>SOS:4 4.00</p>
-</li>
-<li>
-<p>打印结果</p>
+      <p>在 Linux 系统中，输入 <code>ll</code> 或者 <code>ls -a</code> 命令，会列出全部文件以及各个文件所对应的权限。</p>
+<p>该处列出的权限由 10 个字符组成，第一位为 <code>d</code> 表示该项是一个文件，为 <code>-</code> 表示是文件夹</p>
+<p>后面的 9 个字符，每 3 个为一组，分别表示<strong>文件所有者(user)****用户组(group)<strong>和</strong>其他用户(other)</strong>。每一组第一个字符是 r 或 -，用来表示对应用户是否有读权限；第二个字符是 w 或者 -，用来表示对应用户的写入权限；最后一个是执行权限，x 或者 -。</p>
+<p>每个权限不仅可以用 rwx 表示，还可以使用<strong>一位八进制数</strong>或者<strong>三位二进制数</strong>表示，在使用 二进制表示时，最左边的一位，表示读(r)权限，中间表示写(w)权限，最后表示执行(x)权限。表示权限时，用 1 表示具有该权限，0 表示无对应权限</p>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/11/20221111094959.png" alt="权限表"></p>
+<p>由于三位二进制数表示一位八进制数，所以每个 拥有者、用户组、其他用户的权限也就能用 0~7 的八进制数来表示，对应的八进制数，就是二进制数表示的值</p>
+<p>例如</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#40a070">1</span>    <span style="color:#40a070">2</span>    <span style="color:#40a070">3</span>    <span style="color:#40a070">4</span>    <span style="color:#40a070">5</span>    <span style="color:#40a070">6</span>    <span style="color:#40a070">7</span>    <span style="color:#40a070">8</span>    <span style="color:#40a070">9</span>   <span style="color:#40a070">10</span>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ chmod <span style="color:#40a070">664</span> myfile
+</span></span><span style="display:flex;"><span>$ ls -l myfile
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#40a070">1</span>   <span style="color:#40a070">57</span> Jul  <span style="color:#40a070">3</span> 10:13  myfile
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>见 t9.c 文件</p>
-</li>
-<li>
-<p>a.    1    2</p>
-<p>b. 101</p>
-<p>101</p>
-<p>102</p>
-<p>102</p>
-<p>c.stuvw</p>
-</li>
-<li>
-<p><del>COMPUTER BYTES DOG
-That&rsquo;s all.</del></p>
-<p>由于没有括起来，这个程序不会停止</p>
-</li>
-<li>
-<p>a.x=x+10</p>
-<p>b.x++</p>
-<p>c.c=(a+b)*2</p>
-<p>d.c=2<em>a+2</em>b</p>
-</li>
-<li>
-<p>a.x&ndash;</p>
-<p>b.m=n%k</p>
-<p>c.q/(b-a)</p>
-<p>d.x=(a+b)/(c*d)</p>
-</li>
-</ol>
+</div><h2 id="chmodhttpszhwikipediaorgwikichmod"><a href="https://zh.wikipedia.org/wiki/Chmod">chmod</a></h2>
+<p>chmod的意思时 change mode, 用来改变对应文件的权限，即更改上面的 3 位八进制数字。</p>
+<h3 id="用法1">用法1</h3>
+<p>chmod 数字 文件名</p>
+<p>例如</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod <span style="color:#40a070">664</span> myfile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这种方法直接给对应文件赋予相应的权限</p>
+<h3 id="用法2">用法2</h3>
+<p>chmod 用户 +/-/= 权限名 文件名</p>
+<p>这里的用户由<code>u g o a</code>三种选择，分别对应所有者、用户组、其他用户、全部三者。<code>+ - =</code> 分别表示赋予、减少和设定</p>
+<p>可以同时选择多个用户，如果要同时对所有者和用户组增加执行权限可以使用<code>ug + r</code>。而 <code>a</code> 就相当于 <code>ugo</code>，也可以省略</p>
+<p>如果对不同用户组给予不同权限，可以用逗号隔开，比如 <code>chmod u+r,go-r docs</code> 就是对 u 和 g、o 分别处理权限</p>
+<p>举例</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod a+r file
+</span></span><span style="display:flex;"><span>chmod +rwx file
+</span></span><span style="display:flex;"><span>chmod <span style="color:#bb60d5">u</span><span style="color:#666">=</span>rw,go<span style="color:#666">=</span> file
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="用法3">用法3</h3>
+<p>参数 <code>-R</code> 放在 chmod 之后，表示对目录的子目录子文件进行相同操作</p>
+<h2 id="chownhttpsblogcsdnnetcarefree2005articledetails121473234"><a href="https://blog.csdn.net/carefree2005/article/details/121473234">chown</a></h2>
+<p>chown 是 change owner 的缩写，用来修改文件的所有者或所有用户组，只能以 root 身份运行</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chown <span style="color:#666">[</span>参数<span style="color:#666">]</span> <span style="color:#666">[</span>user<span style="color:#666">][</span>:group<span style="color:#666">]</span> 文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中参数，user，group都是可选变量</p>
+<p>参数中 -R 表示递归所有子目录子文件</p>
     </div>
 
     
@@ -507,9 +488,8 @@ That&rsquo;s all.</del></p>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
-            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
-            <a href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/">思考题</a>
+          <a href="/tags/linux%E6%8A%80%E5%B7%A7/">Linux技巧</a>
+            <a href="/tags/%E6%9D%83%E9%99%90/">权限</a>
             
         </div>
 
@@ -517,22 +497,9 @@ That&rsquo;s all.</del></p>
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/chmod_chown/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Linux 文件权限学习</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/vps_azure/">
-            <span class="next-text nav-default">vps_azure</span>
+          <a class="next" href="/post/c_chapter5_thinking/">
+            <span class="next-text nav-default">C语言第五章思考题</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

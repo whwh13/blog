@@ -6,10 +6,85 @@
     <description>Recent content on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 07 Nov 2022 16:38:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Nov 2022 11:26:08 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux 文件权限学习</title>
+      <link>/post/chmod_chown/</link>
+      <pubDate>Wed, 09 Nov 2022 11:26:08 +0800</pubDate>
+      
+      <guid>/post/chmod_chown/</guid>
+      
+        <description>&lt;p&gt;在 Linux 系统中，输入 &lt;code&gt;ll&lt;/code&gt; 或者 &lt;code&gt;ls -a&lt;/code&gt; 命令，会列出全部文件以及各个文件所对应的权限。&lt;/p&gt;
+&lt;p&gt;该处列出的权限由 10 个字符组成，第一位为 &lt;code&gt;d&lt;/code&gt; 表示该项是一个文件，为 &lt;code&gt;-&lt;/code&gt; 表示是文件夹&lt;/p&gt;
+&lt;p&gt;后面的 9 个字符，每 3 个为一组，分别表示&lt;strong&gt;文件所有者(user)****用户组(group)&lt;strong&gt;和&lt;/strong&gt;其他用户(other)&lt;/strong&gt;。每一组第一个字符是 r 或 -，用来表示对应用户是否有读权限；第二个字符是 w 或者 -，用来表示对应用户的写入权限；最后一个是执行权限，x 或者 -。&lt;/p&gt;
+&lt;p&gt;每个权限不仅可以用 rwx 表示，还可以使用&lt;strong&gt;一位八进制数&lt;/strong&gt;或者&lt;strong&gt;三位二进制数&lt;/strong&gt;表示，在使用 二进制表示时，最左边的一位，表示读(r)权限，中间表示写(w)权限，最后表示执行(x)权限。表示权限时，用 1 表示具有该权限，0 表示无对应权限&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/11/20221111094959.png&#34; alt=&#34;权限表&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由于三位二进制数表示一位八进制数，所以每个 拥有者、用户组、其他用户的权限也就能用 0~7 的八进制数来表示，对应的八进制数，就是二进制数表示的值&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-2&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-3&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod &lt;span style=&#34;color:#40a070&#34;&gt;664&lt;/span&gt; myfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -l myfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-rw-r--  &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;   &lt;span style=&#34;color:#40a070&#34;&gt;57&lt;/span&gt; Jul  &lt;span style=&#34;color:#40a070&#34;&gt;3&lt;/span&gt; 10:13  myfile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;chmodhttpszhwikipediaorgwikichmod&#34;&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/Chmod&#34;&gt;chmod&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;chmod的意思时 change mode, 用来改变对应文件的权限，即更改上面的 3 位八进制数字。&lt;/p&gt;
+&lt;h3 id=&#34;用法1&#34;&gt;用法1&lt;/h3&gt;
+&lt;p&gt;chmod 数字 文件名&lt;/p&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-1-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#40a070&#34;&gt;664&lt;/span&gt; myfile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这种方法直接给对应文件赋予相应的权限&lt;/p&gt;
+&lt;h3 id=&#34;用法2&#34;&gt;用法2&lt;/h3&gt;
+&lt;p&gt;chmod 用户 +/-/= 权限名 文件名&lt;/p&gt;
+&lt;p&gt;这里的用户由&lt;code&gt;u g o a&lt;/code&gt;三种选择，分别对应所有者、用户组、其他用户、全部三者。&lt;code&gt;+ - =&lt;/code&gt; 分别表示赋予、减少和设定&lt;/p&gt;
+&lt;p&gt;可以同时选择多个用户，如果要同时对所有者和用户组增加执行权限可以使用&lt;code&gt;ug + r&lt;/code&gt;。而 &lt;code&gt;a&lt;/code&gt; 就相当于 &lt;code&gt;ugo&lt;/code&gt;，也可以省略&lt;/p&gt;
+&lt;p&gt;如果对不同用户组给予不同权限，可以用逗号隔开，比如 &lt;code&gt;chmod u+r,go-r docs&lt;/code&gt; 就是对 u 和 g、o 分别处理权限&lt;/p&gt;
+&lt;p&gt;举例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-2-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-2&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-2-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-3&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-2-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod a+r file
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod +rwx file
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#bb60d5&#34;&gt;u&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;rw,go&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; file
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;用法3&#34;&gt;用法3&lt;/h3&gt;
+&lt;p&gt;参数 &lt;code&gt;-R&lt;/code&gt; 放在 chmod 之后，表示对目录的子目录子文件进行相同操作&lt;/p&gt;
+&lt;h2 id=&#34;chownhttpsblogcsdnnetcarefree2005articledetails121473234&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/carefree2005/article/details/121473234&#34;&gt;chown&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;chown 是 change owner 的缩写，用来修改文件的所有者或所有用户组，只能以 root 身份运行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-3-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-3-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chown &lt;span style=&#34;color:#666&#34;&gt;[&lt;/span&gt;参数&lt;span style=&#34;color:#666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;[&lt;/span&gt;user&lt;span style=&#34;color:#666&#34;&gt;][&lt;/span&gt;:group&lt;span style=&#34;color:#666&#34;&gt;]&lt;/span&gt; 文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中参数，user，group都是可选变量&lt;/p&gt;
+&lt;p&gt;参数中 -R 表示递归所有子目录子文件&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>C语言第五章思考题</title>
