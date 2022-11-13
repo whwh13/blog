@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>C语言第六章 C 控制语句：循环 - whwh&#39;s blog for self</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="whwh13" /><meta name="description" content="C语言学习，第六章笔记" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.104.3" />
+
+
+<link rel="canonical" href="/post/c_chapter6/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:title" content="C语言第六章 C 控制语句：循环" />
+<meta property="og:description" content="C语言学习，第六章笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/c_chapter6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-13T22:07:46+08:00" />
+<meta property="article:modified_time" content="2022-11-13T22:07:46+08:00" />
+
+<meta itemprop="name" content="C语言第六章 C 控制语句：循环">
+<meta itemprop="description" content="C语言学习，第六章笔记"><meta itemprop="datePublished" content="2022-11-13T22:07:46+08:00" />
+<meta itemprop="dateModified" content="2022-11-13T22:07:46+08:00" />
+<meta itemprop="wordCount" content="5512">
+<meta itemprop="keywords" content="C语言,学习,笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言第六章 C 控制语句：循环"/>
+<meta name="twitter:description" content="C语言学习，第六章笔记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">whwh&#39;s blog for self</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      whwh&#39;s blog for self
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言第六章 C 控制语句：循环</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          whwh13
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-11-13">
+      2022-11-13
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 5512 字 -
+        预计阅读 12 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="/categories/c%E8%AF%AD%E8%A8%80/"> C语言 </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#61-再探-while-循环">6.1 再探 while 循环</a>
+      <ul>
+        <li><a href="#611-程序61注释">6.1.1 程序6.1注释</a></li>
+        <li><a href="#612-c风格读取循环">6.1.2 C风格读取循环</a></li>
+      </ul>
+    </li>
+    <li><a href="#62-while-语句">6.2 while 语句</a>
+      <ul>
+        <li><a href="#621-中止-while-循环">6.2.1 中止 while 循环</a></li>
+        <li><a href="#622-何时中止循环">6.2.2 何时中止循环</a></li>
+        <li><a href="#623-while入口条件循环">6.2.3 while:入口条件循环</a></li>
+        <li><a href="#624-语法要点">6.2.4 语法要点</a></li>
+      </ul>
+    </li>
+    <li><a href="#63-用关系运算符和表达式比较大小">6.3 用关系运算符和表达式比较大小</a>
+      <ul>
+        <li><a href="#631-什么是真">6.3.1 什么是真</a></li>
+        <li><a href="#632-其他真值">6.3.2 其他真值</a></li>
+        <li><a href="#633-真值的问题">6.3.3 真值的问题</a></li>
+        <li><a href="#_bool类型">_BOOL类型</a></li>
+        <li><a href="#优先级和关系运算符">优先级和关系运算符</a></li>
+        <li><a href="#不确定循环和计数循环">不确定循环和计数循环</a></li>
+      </ul>
+    </li>
+    <li><a href="#65-for-循环">6.5 for 循环</a>
+      <ul>
+        <li><a href="#651-利用-for-的灵活性">6.5.1 利用 for 的灵活性</a></li>
+      </ul>
+    </li>
+    <li><a href="#66-其他赋值运算符-">6.6 其他赋值运算符（+=、-=、*=、/=、%=）</a></li>
+    <li><a href="#67-逗号运算符">6.7 逗号运算符</a>
+      <ul>
+        <li><a href="#671-示例-每行半步">6.7.1 示例 每行半步</a></li>
+      </ul>
+    </li>
+    <li><a href="#出口条件循环-do-while">出口条件循环： do while</a></li>
+    <li><a href="#69-如何选择循环">6.9 如何选择循环</a></li>
+    <li><a href="#610-嵌套循环">6.10 嵌套循环</a></li>
+    <li><a href="#611-数组简介">6.11 数组简介</a>
+      <ul>
+        <li><a href="#6111-在-for-循环中使用数组">6.11.1 在 for 循环中使用数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#612-使用函数返回值">6.12 使用函数返回值</a>
+      <ul>
+        <li><a href="#6122-使用带返回值的函数">6.12.2 使用带返回值的函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+
+    
+    <div class="post-content">
+      <h2 id="61-再探-while-循环">6.1 再探 while 循环</h2>
+<h3 id="611-程序61注释">6.1.1 程序6.1注释</h3>
+<p>对 while 循环，判断条件是表达式 <code>status == 1</code>, <code>==</code>是C的相等运算符(equality operator)，用来判断 status 是否等于 1。等于 1 为 true(1),否则为 false(0)</p>
+<p>同时 <code>status = scanf(&quot;%d&quot;, &amp;num)</code> 则是利用了 scanf 函数的两个作用，其一是为 num 赋值，其二是 scanf 的返回值是其成功读取的<strong>项数</strong></p>
+<p>伪代码(pseudocode):通过简单的语句表示程序的思路，在形式上与计算机语言对应，但是不考虑具体的格式，仅体现程序设计的逻辑。确认逻辑没有问题，再翻译成实际的编程语言</p>
+<p>举例：</p>
+<pre tabindex="0"><code class="language-paseudocode" data-lang="paseudocode">初始化 sum 为 0
+提示用户输入数据
+读取用户输入的数据
+当输入数据为整数时，
+    输入赋值给 sum
+    提示用户输入
+    读取下一个输入
+输入结束，打印 sum 值
+</code></pre><p>对于while循环，可以写成伪代码形式为</p>
+<pre tabindex="0"><code class="language-paseudocode" data-lang="paseudocode">获得第一个用于判断的值
+如果判断为真
+    处理
+    获取下一个值
+</code></pre><h3 id="612-c风格读取循环">6.1.2 C风格读取循环</h3>
+<p>前面的</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>status <span style="color:#666">=</span> scanf(<span style="color:#4070a0">&#34;%ld&#34;</span>,<span style="color:#666">&amp;</span>num);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (status <span style="color:#666">==</span> <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">/* 循环 */</span>
+</span></span><span style="display:flex;"><span>    status <span style="color:#666">=</span> scanf(<span style="color:#4070a0">&#34;%ld&#34;</span>, <span style="color:#666">&amp;</span>num);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以替换为</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (scanf(<span style="color:#4070a0">&#34;%ld&#34;</span>, <span style="color:#666">&amp;</span>num) <span style="color:#666">==</span> <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">/* 循环 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里由于每次都要获取值，同时 scanf 每次只要用到就会获取并有个返回值，所以可以这样写起来更精简</p>
+<p>下面正式学习 while 语句</p>
+<h2 id="62-while-语句">6.2 while 语句</h2>
+<p>while 语句的通用表达形式是：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (expression)
+</span></span><span style="display:flex;"><span>    ststement
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中的 statement 可以是用分号结尾的简单语句，也可以是用花括号合并起来的复合语句。</p>
+<p>目前为止，expression 都是用的关系表达式，如果关系为真（更一般的是非零），就执行一次 statement，之后再次判断知道 expression 为假（0）。期间的每一次循环称之为一次迭代</p>
+<h3 id="621-中止-while-循环">6.2.1 中止 while 循环</h3>
+<p>while 循环有一个很重要的注意事项，那便是 expression 必须能够有为假（0）的变化可能
+例如</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>index <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(<span style="color:#666">--</span>index <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Good morning!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里尽管判断式发生了改变，但是在溢出之前仍然不可能中止循环，所以也会几乎无限制的打印 <code>Good morning!</code></p>
+<h3 id="622-何时中止循环">6.2.2 何时中止循环</h3>
+<p>很容易理解但是很重要的一个问题：中止循环是在结束一次迭代之后，在对判断式求值时决定的。不会因为在执行 statement 过程中某个值发生了改变而直接停止</p>
+<h3 id="623-while入口条件循环">6.2.3 while:入口条件循环</h3>
+<p>while 是一个使用入口条件的有条件循环。有条件指的是需要满足一定条件才能进入循环，入口条件（entry condition）值的是必须满足条件才能进入循环体（后面和 do while 对比）</p>
+<h3 id="624-语法要点">6.2.4 语法要点</h3>
+<p>只有跟在测试条件（判断语句）后面的单独语句（简单或复合）才是循环执行的部分
+缩进并非程序所要求的，而是为了易读认为控制的，所以不能用缩进来判断是不是循环体。</p>
+<p>即使 while 语句使用复合语句，但是在语句构成上，它仍然是一条单独的语句。从 while 开始执行，到第一个分号（或者右花括号）结束</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(n<span style="color:#666">++</span> <span style="color:#666">&gt;</span><span style="color:#40a070">2</span>);
+</span></span><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;%d&#34;</span>, n );
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上例中 while 语句到第一个分号就已经结束了，因此循环部分是空语句（<em>null statement</em>）</p>
+<p>空语句的利用：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(scanf(<span style="color:#4070a0">&#34;%d&#34;</span>, <span style="color:#666">&amp;</span>n) <span style="color:#666">==</span> <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>    ; <span style="color:#60a0b0;font-style:italic">/* 跳过整数输出 */</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用上例程序，可以持续获取输入，直到获得一个非整数的输入。<strong>注意</strong>：为了易读性考虑，这里的分号最好还是独占一行。提醒这里的空语句是有意为之而且更容易看到</p>
+<h2 id="63-用关系运算符和表达式比较大小">6.3 用关系运算符和表达式比较大小</h2>
+<p>while 循环经常依赖表达式做比较，这样的表达式称为关系表达式(relational expression)，在其中间的运算符叫做关系运算符(relation oprator)
+C语言所有的关系运算符列在下面</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于或等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于或等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+</tbody>
+</table>
+<p>关系运算符也可以用来比较字符，int型的变量也能拿来和字符比较，通过ASCII码</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> ch <span style="color:#666">=</span> <span style="color:#40a070">97</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> (ch<span style="color:#666">++</span> <span style="color:#666">!=</span> <span style="color:#4070a0">&#39;g&#39;</span>)
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;%c&#34;</span>, ch);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不能通过关系运算符比较字符串</p>
+<p>在比较浮点数时，由于浮点数的舍入误差，以及二进制存储中一些有限的十进制小数，比如 0.1，在二进制中是无限的。所以应当尽量只比较 &lt; 或 &gt;。</p>
+<p>同时在 math.h 中有 <code>fabs()</code> 函数，该函数返回浮点数的绝对值，是经常能用到的函数</p>
+<h3 id="631-什么是真">6.3.1 什么是真</h3>
+<p>C 语言中将表达式为真，会给表达式赋值为 1，为假会赋值为 0</p>
+<p>可以通过这种机制写出无限循环的程序</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(<span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="632-其他真值">6.3.2 其他真值</h3>
+<p>通过程序 6.7.truth.c 结果可以看到，在<strong>关系表达式</strong>中 C语言中将所有非零值视为真，只有 0 视为假。</p>
+<p>正因为如此，很多程序员会将 <code>while(n != 0)</code>写成<code>while(n)</code>。后者是更常用的表达</p>
+<h3 id="633-真值的问题">6.3.3 真值的问题</h3>
+<p>C语言对于真值的规定过于宽泛了，也容易导致一些其他的问题。比如 <code>6.8.trouble.c</code> 修改自 <code>6.1.summing</code>，仅仅把<code>status == 1</code>换成了<code>status = 1</code>，这就将<strong>关系表达式</strong>错误的写成了<strong>赋值表达式</strong></p>
+<p>前面有提到，赋值<strong>表达式的值</strong>就是右值。所以这里的 <code>while(status = 1)</code> 等价于 <code>while(1)</code> 所以输入 q 不仅不会退出，反而因为 scanf 的特性，不断打印输入数字的提示</p>
+<p>这是因为如果 scanf 读取失败，会把无法读取的数留在队列中等下次读取，而循环中下次仍然只读取整数，所以还会失败。</p>
+<p><strong>注意</strong>：这种类型的错误编译器一般不会给提示，不过有经验的程序员在需要比较的值是常量的时候会将其写在左边。即采用<code>5 == n</code> 而不是 <code>n == 5</code> 这是因为如果写错成 <code>5 = n</code> 编译器会报错，因为 5 不是一个左值</p>
+<h3 id="_bool类型">_BOOL类型</h3>
+<p>在C语言中，一直用的 int 类型的变量表示真或者假。直到 C99 专门新增了 _BOOL 类型。用来专门表示布尔变量(Boolean variable)(专门用来表示真假的变量)。_Bool 类型只能存储 0 或者 1，如果给其赋值其他非零值，会被设置为 1。</p>
+<p>在写程序的时候，例如在<code>6.9.boolean.c</code>中，定义了一个布尔变量叫<code>input_is_good</code>这是常用做法，指给布尔变量命名时使用能表示真假的名字</p>
+<p>C99提供了 stdbool.h 该头文件将 bool 作为 _Bool 的别名，同时将 true 和 false 定义成了符号常量 1 和 0。这是兼容C++的，因为 C++ 中，<code>bool,true,false</code>都是关键字</p>
+<h3 id="优先级和关系运算符">优先级和关系运算符</h3>
+<p>关系运算符的优先级小于算数运算符(+ -)，但是高于赋值运算符，因此<code>xtest = x &gt; y</code>等价于 <code>xtest = (x &gt; y)</code>
+<code>x&gt;y+2</code>等价于<code>x&gt;(y+2)</code></p>
+<p>关系运算符之间，(&gt;、&gt;=、&lt;、&lt;=)四者具有相同优先级，且高于(!=、==)。同时也是有从左向右的运算规则，即<code>ex != wye ==zee</code>等价于<code>(ez != wye) == zee</code></p>
+<h3 id="不确定循环和计数循环">不确定循环和计数循环</h3>
+<p><strong>不确定循环</strong>(indefinite loop), 指的是不确定结束循环前需要执行多少次的循环。<strong>确定循环</strong>(counting loop)，指循环之前事先规定循环次数的循环。</p>
+<p>计数循环要素：</p>
+<ul>
+<li>初始化计数器</li>
+<li>计数器与有限值比较</li>
+<li>每次循环递增计数器</li>
+</ul>
+<p>使用 while 循环，初始化计数器需要在循环体之外，有可能发生忘记，而下面的 for 循环则避免了这种情况</p>
+<h2 id="65-for-循环">6.5 for 循环</h2>
+<p>for 循环将初始化、判断、更新组合在一起。</p>
+<p>for 后面圆括号中有 3 个通过两个分号分开的表达式。第 1 个是初始化表达式，只会在 for 循环开始时执行一次。第二个是判断表达式，判断为假，结束循环。第三个是表达式更新，每次循环结束之后求值。</p>
+<p>同时这里的三个表达式称为<strong>控制表达式</strong>，都是完整的表达式，因此每个表达式的副作用（比如变量递增）都发生在单独表达式结束之后。</p>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/10/20221110222001.png" alt="for循环"></p>
+<h3 id="651-利用-for-的灵活性">6.5.1 利用 for 的灵活性</h3>
+<ol>
+<li>
+<p>使用递减运算符递减计数器（用于显示倒计时等） <code>for(sec = 5; sec &gt; 0; sec--)</code></p>
+</li>
+<li>
+<p>计数器每次递增不止是 1 <code>for(n = 0; n &gt; 100; n = n + 10)</code></p>
+</li>
+<li>
+<p>字符代替数字计数 <code>for(ch = 'a'; ch &lt;= 'z'; ch++)</code></p>
+</li>
+<li>
+<p>判别式不一定要是迭代次数 <code>for(num = 1; num*num*num &lt;=1000; num++)</code></p>
+</li>
+<li>
+<p>可以让递增量以任何方式增长 <code>for(debt 100.0; debt &lt; 150.0; debt = debt*1.1)</code></p>
+</li>
+<li>
+<p>第三个表达式可以使用任意合法表达式 <code>for(x = 1; y &lt;=75; y = (++x * 5) + 50)</code></p>
+</li>
+<li>
+<p>表达式可以使用空表达式 <code>for (n = 3; ans = 25;)</code> 省略中间循环不会停止</p>
+</li>
+<li>
+<p>第一个表达式也不用必须给变量赋值（用于printf打印某个值）<code>for (printf(&quot;Start!&quot;);num != 6)</code></p>
+</li>
+<li>
+<p>循环体中的行为可任意改变循环表达式 <code>for (n = 1; n&lt; 10000; n = n + delta)</code> 如果步长太小，可以在循环中识别并改变</p>
+</li>
+</ol>
+<p><strong>总结</strong>：自己决定 for 循环头中的三个表达式，实现各种创意的循环</p>
+<blockquote>
+<p>for循环通用形式</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-10-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> ( initialize; test; update)
+</span></span><span style="display:flex;"><span>  ststement
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>initialize 在循环开始前执行，只执行一次。然后对 test 求值，如果为真，则执行 statement。执行 statement 之后执行一次 update，然后继续执行 test</p>
+</blockquote>
+<h2 id="66-其他赋值运算符-">6.6 其他赋值运算符（+=、-=、*=、/=、%=）</h2>
+<p>可以通用的表示为 <code>*=</code> 的类型，右侧是等于号，左侧是一个运算符，总运算符左侧是左值，右侧是右值。相当于 <strong>左值本身通过 右值经过运算符处理后 重新赋值给左值</strong></p>
+<p>列出</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>scores <span style="color:#666">+=</span> <span style="color:#40a070">20</span>          scores <span style="color:#666">=</span> scores <span style="color:#666">+</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>time <span style="color:#666">/=</span> <span style="color:#40a070">2.73</span>          time <span style="color:#666">=</span> time <span style="color:#666">/</span> <span style="color:#40a070">2.73</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#666">*=</span> <span style="color:#40a070">3</span><span style="color:#666">*</span>y <span style="color:#666">+</span> <span style="color:#40a070">12</span>         x <span style="color:#666">=</span> x<span style="color:#666">*</span>(<span style="color:#40a070">3</span><span style="color:#666">*</span>y <span style="color:#666">+</span> <span style="color:#40a070">12</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这些运算符优先级与等于号相同，低于 + 或 *。这些运算符让代码更加紧凑，编译出来也更加高效。当在 for 循环中使用复杂表达式会更方便且高效</p>
+<h2 id="67-逗号运算符">6.7 逗号运算符</h2>
+<p>逗号运算符最常见在 for 循环中，但也可以用在别的地方。</p>
+<ul>
+<li>
+<p>逗号运算符规定被分割的表达式从左到右求值（副作用与求值同时）</p>
+</li>
+<li>
+<p>含逗号的表达式的<strong>值</strong>是逗号右侧的表达式的值
+例如<code>x = (y = 3, (z = ++y + 2) + 5);</code>，过程是先对 y 赋值 3，然后 ++ 之后加 2 赋值给 z 再加 5，即是其值，但是很蠢不要用</p>
+</li>
+<li>
+<p>注意不要错用
+例如<code>houseprice = 249,500;</code>表示<code>houseprice = 249;500;</code>。<code>displacement = (249,500);</code>赋值给 displacement 的是逗号右边的值 500</p>
+</li>
+<li>
+<p>运算符有限级高于 =，小于 +</p>
+</li>
+<li>
+<p>逗号也能用于分隔符，不一定表示逗号运算符</p>
+</li>
+</ul>
+<h3 id="671-示例-每行半步">6.7.1 示例 每行半步</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-18">18</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> t_ct;     <span style="color:#60a0b0;font-style:italic">//项计数
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">double</span> time, power_of_2;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> limit;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Enter the number of terms you want: &#34;</span>);
+</span></span><span style="display:flex;"><span>    scanf(<span style="color:#4070a0">&#34;%d&#34;</span>, <span style="color:#666">&amp;</span>limit);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span>(time <span style="color:#666">=</span> <span style="color:#40a070">0</span>, power_of_2 <span style="color:#666">=</span> <span style="color:#40a070">1</span>, t_ct <span style="color:#666">=</span> <span style="color:#40a070">1</span>; t_ct <span style="color:#666">&lt;=</span> limit; t_ct<span style="color:#666">++</span>, power_of_2 <span style="color:#666">*=</span><span style="color:#40a070">2.0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        time <span style="color:#666">+=</span> <span style="color:#40a070">1.0</span><span style="color:#666">/</span>power_of_2;
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;time = %f when terms = %d.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, time, t_ct);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="出口条件循环-do-while">出口条件循环： do while</h2>
+<p>while和 for 都是入口条件循环，迭代之前检查测试条件。而 do while 是出口条件循环（exit-condition loop）在每次迭代之后检查测试条件，能保证至少执行一次循环体的内容</p>
+<p>使用 while 也能写出相应的程序，但是会长很多，需要在循环体之前在加一次 statement</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    statement
+</span></span><span style="display:flex;"><span><span style="color:#06287e">while</span> ( expression );
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是通用形式，statement 可以是简单语句或者复合语句，while 后以分号结尾</p>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/13/20221113162400.png" alt="do_while"></p>
+<p>同时在使用时应当避免</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="">是否继续；</span>
+</span></span><span style="display:flex;"><span>    <span style="">执行；</span>
+</span></span><span style="display:flex;"><span>}<span style="color:#007020;font-weight:bold">while</span>(<span style="">继续</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这种会导致用户不想继续的时候仍然会继续执行</p>
+<h2 id="69-如何选择循环">6.9 如何选择循环</h2>
+<p>入口循环使用的更多：其一，原则上在执行循环之前测试条件更好；其二，测试条件放在开头更加易读；其三，很多程序会要求不满足的直接跳过循环</p>
+<p>for 和 while 可以相互转化，省略第一和第三个表达式，for 循环就是 while 循环</p>
+<p>while 循环之前加初始化，循环最后加参数更新，就是 for 循环</p>
+<p>一般而言，当设计初始化以及更新变量，for 循环更合适，其他情况 while 更好</p>
+<h2 id="610-嵌套循环">6.10 嵌套循环</h2>
+<p>嵌套循环就是在一个循环中加另一个循环，通常用来表示矩阵的行列，也就是有两个参数的函数</p>
+<p>每次外层循环都会执行内层循环的全部次数，可以控制内层循环使用外层循环的变量，使内层循环每次做的事情不同</p>
+<h2 id="611-数组简介">6.11 数组简介</h2>
+<p>数组相当于<strong>向量</strong></p>
+<p>声明数组的方法类似于声明字符串的方法<strong>字符串的本质就是声明了一个 char 的数组，并将字符串带着 \0 存储在了数组中</strong></p>
+<p>声明数组可以包含任意类型的元素：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#902000">float</span> debts[<span style="color:#40a070">20</span>];        <span style="color:#60a0b0;font-style:italic">//声明可以存储20个float值的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">int</span> nannies[<span style="color:#40a070">22</span>];        <span style="color:#60a0b0;font-style:italic">//22个int
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">char</span> actors[<span style="color:#40a070">26</span>];        <span style="color:#60a0b0;font-style:italic">//26个char
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">long</span> big[<span style="color:#40a070">500</span>];          <span style="color:#60a0b0;font-style:italic">//500个big
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>访问数组中的元素或者给数组中的元素赋值，使用中括号加数字，例如定义了 <code>float debts[20]</code>，则<code>debts[0]~debts[19]</code>都可以视为变量对其操作。<strong>注意</strong>：C语言数组元素从 0 开始</p>
+<p>可以直接对其赋值 <code>debts[0]=112.1</code>，也可以通过scanf赋值 <code>scanf(&quot;%f&quot;, &amp;debts[19])</code>，注意这里仍然有<code>&amp;</code>符号</p>
+<p>需要<strong>注意</strong>，C语言编译器并不会检查下标是否正确，所以当定义了20个元素的数组，给<code>debts[20]</code>进行赋值，会影响内存中的其他数据，导致程序被破坏</p>
+<p><strong>字符串与数组</strong>：字符串的本质就是存储在 char 数组中的元素，不过其必须以 \0 结尾，不以 \0 结尾不会被视为字符串（C语言自动处理）</p>
+<p>下标(subscript)、索引(indice)、偏移量(offset)都是指中括号中的数字，只能为整数，只能以0开始计数</p>
+<p>在内存中，数组中的元素相互相邻存储</p>
+<h3 id="6111-在-for-循环中使用数组">6.11.1 在 for 循环中使用数组</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-19"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-20"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-21"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-22"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-23"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-24"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-25"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-26"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-26">26</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#define SIZE 10
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#define PAR 72
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> index, score[SIZE];
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> sum <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float</span> average;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Enter %d golf scores:</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, SIZE);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> ( index <span style="color:#666">=</span> <span style="color:#40a070">0</span>; index <span style="color:#666">&lt;</span> SIZE; index<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        scanf(<span style="color:#4070a0">&#34;%d&#34;</span>,<span style="color:#666">&amp;</span>score[index]);      <span style="color:#60a0b0;font-style:italic">//分别读取10个分数
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;The scores read in are as follows:</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span>(index <span style="color:#666">=</span> <span style="color:#40a070">0</span>; index<span style="color:#666">&lt;</span>SIZE; index<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;%5d&#34;</span>, score[index]);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span>(index <span style="color:#666">=</span> <span style="color:#40a070">0</span>; index <span style="color:#666">&lt;</span> SIZE; index<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>        sum <span style="color:#666">+=</span> score[index];
+</span></span><span style="display:flex;"><span>    average <span style="color:#666">=</span> (<span style="color:#902000">float</span>) sum <span style="color:#666">/</span> SIZE;
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Sum of scores = %d, average = %.2f</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, sum, average);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;That&#39;s a handicap of %.0f.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, average <span style="color:#666">-</span> PAR);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>程序使用数组和循环处理数据，这样不用使用很多个 scanf 函数，也不用定义很多变量</p>
+</li>
+<li>
+<p>使用 #define 创建的明示常量定义数组的大小，方便后需更改升级</p>
+</li>
+<li>
+<p>使用类似<code>for(index = 0; index&lt;SIZE; index++)</code>可以非常方便的处理数组值</p>
+</li>
+<li>
+<p>用户输入之后程序重新显示了用户的输入，易于调试</p>
+</li>
+</ul>
+<h2 id="612-使用函数返回值">6.12 使用函数返回值</h2>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-19"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-20"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-21"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-22"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-23"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-24"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-25"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-26"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-27"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-28"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-29"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-30"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-30">30</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">double</span> <span style="color:#06287e">power</span>(<span style="color:#902000">double</span> n, <span style="color:#902000">int</span> p);<span style="color:#60a0b0;font-style:italic">//ANSI函数原型
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">double</span> x, xpow;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> exp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Enter a number and the positive integer power &#34;</span>);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;to which</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">the number will be raised. Enter q to quit.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> (scanf(<span style="color:#4070a0">&#34;%lf%d&#34;</span>, <span style="color:#666">&amp;</span>x, <span style="color:#666">&amp;</span>exp) <span style="color:#666">==</span> <span style="color:#40a070">2</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        xpow <span style="color:#666">=</span> power(x, exp);   <span style="color:#60a0b0;font-style:italic">//函数调用
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        printf(<span style="color:#4070a0">&#34;%.3g to the power %d is %.5g</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, x, exp, xpow);
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;Enter next pair of numbers or q to quit.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Hope you enjoyed this power trip -- bye!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">double</span> <span style="color:#06287e">power</span>(<span style="color:#902000">double</span> n, <span style="color:#902000">int</span> p)           <span style="color:#60a0b0;font-style:italic">//定义函数
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">double</span> pow <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span>(i <span style="color:#666">=</span> <span style="color:#40a070">1</span>; i <span style="color:#666">&lt;</span> p <span style="color:#666">+</span> <span style="color:#40a070">1</span>; i<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>        pow <span style="color:#666">*=</span> n;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> pow;         <span style="color:#60a0b0;font-style:italic">//返回pow
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该程序定义了一个能求数字的整数幂的函数，并使用其返回值</p>
+<ol>
+<li>
+<p>分析算法：简化函数，只处理正整数次幂，只需要 n 和 n 相乘 p 次就可以。使用for循环，将初始值设定为 1，让其 *= n。循环则定义为当i &lt; p 继续循环，P 就是已知的迭代次数</p>
+</li>
+<li>
+<p>为了扩大计算范围，n pow 都是 double，p 为幂次，自然是 int</p>
+</li>
+<li>
+<p>编写有返回值的函数</p>
+<ul>
+<li>定义函数时确定函数返回值类型（定义函数时，写在函数名前）</li>
+<li>使用 return 表明待返回的值（返回值也可以是表达式）</li>
+</ul>
+</li>
+<li>
+<p>继续分析程序</p>
+<ul>
+<li>
+<p>main 是一个驱动程序（driver），即被设计用来测试函数的小程序</p>
+</li>
+<li>
+<p>但是输入 q 会使 scanf 的返回值为 0，因为 q 与 scanf 中的转换说明 %1f 不匹配。scanf 将返回 0，循环结束。类似地，输入 2.8 q会使 scanf 的返回值为 1，循环也会结束</p>
+</li>
+<li>
+<p>power 函数在程序中出现了3次</p>
+<ul>
+<li>
+<p>函数原型<code>double power(double n, int p);</code></p>
+</li>
+<li>
+<p>函数调用</p>
+</li>
+<li>
+<p>函数定义<code>double power(double n, int p)</code> <strong>没有分号</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="6122-使用带返回值的函数">6.12.2 使用带返回值的函数</h3>
+<ol>
+<li>
+<p>为什么定义函数已经说明其返回值类型，还是需要单独声明</p>
+<p>编译器在首次遇到函数时，就要知道返回类型，所以需要函数原型，称为<strong>前置声明（forward declaration）</strong>。如果将函数定义在main前面，可以省略函数原型，但是不是C的风格。</p>
+<p>因为对于C语言来说，main 函数更多的是框架，函数通常放在别的文件中</p>
+</li>
+<li>
+<p>为什么有些函数<code>scanf</code>不用声明就能使用，也能有其返回值</p>
+<p>头文件中包含了相应的函数原型</p>
+</li>
+</ol>
+    </div>
+
+    
+    
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/chmod_chown/">
+            <span class="next-text nav-default">Linux 文件权限学习</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2022
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        whwh13
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var remark_config = {
+    host: 'https:\/\/remark42.example.com',
+    site_id: 'remark',
+    components: [
+	    'embed',
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
