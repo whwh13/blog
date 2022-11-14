@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随时记录 on whwh&#39;s blog for self</title>
+    <link>/tags/%E9%9A%8F%E6%97%B6%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in 随时记录 on whwh&#39;s blog for self</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Nov 2022 16:32:54 +0800</lastBuildDate><atom:link href="/tags/%E9%9A%8F%E6%97%B6%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一些小教程</title>
+      <link>/post/record/</link>
+      <pubDate>Mon, 14 Nov 2022 16:32:54 +0800</pubDate>
+      
+      <guid>/post/record/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.zerotier.com/devices/synology/&#34;&gt;群晖使用zerotier通过docker&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
