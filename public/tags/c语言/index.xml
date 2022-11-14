@@ -6,7 +6,16 @@
     <description>Recent content in C语言 on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Nov 2022 22:07:46 +0800</lastBuildDate><atom:link href="/tags/c%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 15:26:07 +0800</lastBuildDate><atom:link href="/tags/c%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言第六章思考题</title>
+      <link>/post/c_chapter6_thinking/</link>
+      <pubDate>Mon, 14 Nov 2022 15:26:07 +0800</pubDate>
+      
+      <guid>/post/c_chapter6_thinking/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C语言第六章 C 控制语句：循环</title>
       <link>/post/c_chapter6/</link>
