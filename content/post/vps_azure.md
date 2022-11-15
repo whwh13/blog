@@ -372,3 +372,7 @@ code-server 并没有一些独属于 vscode 的插件，但是可以通过[微�
     free -m                     ##查看是否开启成功
     vim /etc/fstab     ## 在最后添加 /swapfile none swap sw 0 0 设置开机自启
     ```
+
+### 新的思路
+
+[TLS+VMESS+TCP](https://gist.github.com/liberal-boy/f3db4e413a96fa80719db1414f011325)还没有尝试，不过应该很简单

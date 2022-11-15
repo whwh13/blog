@@ -43,7 +43,7 @@ mathjax: false
 ### 修改ssh端口以及密钥
 
 ```sh
-# su whwh
+# su 用户名
 cd ~ 
 mkdir .ssh
 vim .ssh/authorized_keys
