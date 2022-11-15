@@ -28,4 +28,6 @@ mathjax: false
 #     weight: 1
 ---
 [群晖使用zerotier通过docker](https://docs.zerotier.com/devices/synology/)
+
+[linux查找文件](https://blog.csdn.net/m0_37605642/article/details/120095240)
 <!--more-->
