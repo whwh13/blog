@@ -90,14 +90,15 @@ acme.sh --upgrade --auto-upgrade  #设置自动升级
 --nginx     不需要指定根目录自动在nginx完成配置
 ```
 
-举例`acme.sh --issue --server letsencrypt --test -d www.mydomain.com --nginx --keylength ec-256`
+举例`acme.sh --issue --test -d www.mydomain.com --nginx --keylength ec-256`
 
 **注意**：上面的举例用了`--test`测试成功之后应当再正常使用，需要添加参数`--force`
+`acme.sh --issue --server letsencrypt --force -d www.mydomain.com --nginx --keylength ec-256`
 
 #### 安装证书
 
 ```sh
-acme.sh --install-cert -d example.com \   
+acme.sh --install-cert --ecc -d example.com \
 --key-file       /etc/nginx/ssl/example.com/cert.key  \
 --fullchain-file /etc/nginx/ssl/example.com/cert.crt \
 --reloadcmd     "service nginx force-reload"
