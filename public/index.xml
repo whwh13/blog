@@ -1531,7 +1531,8 @@ server {
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;新的思路&#34;&gt;新的思路&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://gist.github.com/liberal-boy/f3db4e413a96fa80719db1414f011325&#34;&gt;TLS+VMESS+TCP&lt;/a&gt;还没有尝试，不过应该很简单&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/liberal-boy/f3db4e413a96fa80719db1414f011325&#34;&gt;TLS+VMESS+TCP&lt;/a&gt;还没有尝试，不过应该很简单&lt;/p&gt;
+&lt;p&gt;上面的这个如果使用acmesh可能会出现问题，具体怎么解决，还没有规范的思路&lt;/p&gt;</description>
       
     </item>
     

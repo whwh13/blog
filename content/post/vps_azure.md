@@ -377,3 +377,5 @@ code-server 并没有一些独属于 vscode 的插件，但是可以通过[微�
 ### 新的思路
 
 [TLS+VMESS+TCP](https://gist.github.com/liberal-boy/f3db4e413a96fa80719db1414f011325)还没有尝试，不过应该很简单
+
+上面的这个如果使用acmesh可能会出现问题，具体怎么解决，还没有规范的思路
