@@ -6,10 +6,22 @@
     <description>Recent content on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Nov 2022 16:32:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Nov 2022 09:58:51 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>/post/test/</link>
+      <pubDate>Sun, 20 Nov 2022 09:58:51 +0800</pubDate>
+      
+      <guid>/post/test/</guid>
+      
+        <description>&lt;h3 id=&#34;for-test&#34;&gt;For test&lt;/h3&gt;
+&lt;p&gt;soon delete&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>记录一些小教程</title>
