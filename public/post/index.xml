@@ -6,7 +6,16 @@
     <description>Recent content in Posts on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Nov 2022 15:47:05 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Nov 2022 21:51:48 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言第七章思考题</title>
+      <link>/post/c_chapter7_thinking/</link>
+      <pubDate>Mon, 21 Nov 2022 21:51:48 +0800</pubDate>
+      
+      <guid>/post/c_chapter7_thinking/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C语言第七章 C控制语句：分支和跳转</title>
       <link>/post/c_chapter7/</link>
