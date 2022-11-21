@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>C语言第七章 C控制语句：分支和跳转 - whwh&#39;s blog for self</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="whwh13" /><meta name="description" content="C语言学习，第七章笔记" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.104.3" />
+
+
+<link rel="canonical" href="/post/c_chapter7/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:title" content="C语言第七章 C控制语句：分支和跳转" />
+<meta property="og:description" content="C语言学习，第七章笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/c_chapter7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-21T15:47:05+08:00" />
+<meta property="article:modified_time" content="2022-11-21T15:47:05+08:00" />
+
+<meta itemprop="name" content="C语言第七章 C控制语句：分支和跳转">
+<meta itemprop="description" content="C语言学习，第七章笔记"><meta itemprop="datePublished" content="2022-11-21T15:47:05+08:00" />
+<meta itemprop="dateModified" content="2022-11-21T15:47:05+08:00" />
+<meta itemprop="wordCount" content="5262">
+<meta itemprop="keywords" content="C语言,学习,笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言第七章 C控制语句：分支和跳转"/>
+<meta name="twitter:description" content="C语言学习，第七章笔记"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">whwh&#39;s blog for self</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      whwh&#39;s blog for self
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://linux101.whwh13.tk/" rel="noopener" target="_blank">
+              Linux101
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.xianmin.org/hugo-theme-jane/" rel="noopener" target="_blank">
+              用法示例
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight wallpaper">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言第七章 C控制语句：分支和跳转</h1>
+      
+
+      <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          whwh13
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2022-11-21">
+      2022-11-21
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 5262 字 -
+        预计阅读 11 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="/categories/c%E8%AF%AD%E8%A8%80/"> C语言 </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+    </header>
+
+    
+    
+
+
+    
+    <div class="post-content">
+      <h2 id="71-if-语句">7.1 if 语句</h2>
+<p>if 语句被称为<strong>分支语句(branching statement)<strong>或者</strong>选择语句(selection statement)</strong>，相当于一个交叉点，程序需要在两条分支中选择一条，通用形式是：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (expression)
+</span></span><span style="display:flex;"><span>    statement
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果对 <code>expression</code> 求值为真，则执行 <code>statement</code>，否则跳过 <code>statement</code>。<code>statement</code> 可以是简单语句或复合语句。与 <code>while</code> 相比，<code>if</code> 的 <code>statement</code> 只会执行一次。即使 <code>if</code> 由复合语句组成，仍然被视为一条语句</p>
+<h2 id="72-if-else-语句">7.2 if else 语句</h2>
+<p>通用形式：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (expression)
+</span></span><span style="display:flex;"><span>    statement1
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    statement2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果 expression 为真，则 statement1，否则 statement2.</p>
+<p>如果 statement1 或者 statement2 由很多条语句组成，那么必须要用花括号括起来，即复合语句（不同于 matlab，因为 C 语言没有 end）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (x <span style="color:#666">&gt;</span><span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Incrementing x:</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    x<span style="color:#666">++</span>;            <span style="color:#60a0b0;font-style:italic">//这里是不和语法的
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">printf</span>(<span style="color:#4070a0">&#34;x&lt;=0</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/19/20221119161647.png" alt="if 语句流程"></p>
+<h3 id="721-getchar--和-putchar-">7.2.1 getchar( ) 和 putchar( )</h3>
+<p>getchar() 函数没有参数，用于读取输入队列中的下一个<strong>字符</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>ch <span style="color:#666">=</span> getchar();
+</span></span><span style="display:flex;"><span>scanf(<span style="color:#4070a0">&#34;%C&#34;</span>, <span style="color:#666">&amp;</span>c);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的两个语句是等价的</p>
+<p>putchar( ) 函数是打印它的参数</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>putchar(ch);
+</span></span><span style="display:flex;"><span>printf(<span style="color:#4070a0">&#34;%c&#34;</span>, ch);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的两个语句也是等价的</p>
+<p>这两个函数只处理字符，所以相比而言更块更简洁，不需要转换说明，而且是被定义在 <code>stdio.h</code> 中</p>
+<h3 id="722-ctypeh-系列的字符函数">7.2.2 ctype.h 系列的字符函数</h3>
+<p>前面的7.2代码中不仅会将字母加一，也会处理非字母，所以就用到 <code>ctype.h</code> 了</p>
+<p><code>ctype.h</code> 中有很多函数，大多数是用来判断参数是否是某一类型，称之为<strong>字符测试函数</strong></p>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/19/20221119184212.png" alt="字符测试函数"></p>
+<p>还有一些称之为<strong>字符映射函数</strong>
+<img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/19/20221119184237.png" alt="字符映射函数"></p>
+<p>字符映射函数并不会改变其本身值（不像 x++ 这种）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>tolower(ch);
+</span></span><span style="display:flex;"><span>ch <span style="color:#666">=</span> tolower(ch);<span style="color:#60a0b0;font-style:italic">//前者不改变ch
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="723-多重选择-else-if">7.2.3 多重选择 else if</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (expression1)
+</span></span><span style="display:flex;"><span>    statement1
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (expression2)
+</span></span><span style="display:flex;"><span>    statement2
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span> 
+</span></span><span style="display:flex;"><span>    statement3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>本质上与下式等价</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (expression1)
+</span></span><span style="display:flex;"><span>    statement1
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (expression2)        <span style="color:#60a0b0;font-style:italic">// 整个 if else 被视为一条语句，不用花括号
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        statement2
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        statement3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也就是相当于嵌套的分支语句可以简写成 else if 形式，两者完全等价</p>
+<p>在<code>7.4.electric.c</code>中预处理器中定义了一个计算表达式，预处理器不进行计算，会在用到对应变量时原状替换，但是编译器会在替换之后进行计算</p>
+<p>理论上可以无限嵌套，只要编译器支持，自从 C99 标准，编译器至少应该支持 127 层嵌套</p>
+<h3 id="724-else-和-if-配对">7.2.4 else 和 if 配对</h3>
+<p>由于 C 语言中没有 end 所以else和哪个 if 配对是一个问题</p>
+<p>C 语言标准是， else 与最近的 if 配对，除非其被花括号括起来，比如：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong>：C语言的编译器是忽略缩进的，但是缩进容易影响读者的判断，应当尽量符合标准</p>
+<h3 id="725-多层嵌套的-if-语句">7.2.5 多层嵌套的 if 语句</h3>
+<p>从头写一个程序，给定一个整数，给出它的所有约数，没有则报告为素数，使用嵌套的 if 语句</p>
+<p>伪代码：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="">提示用户输入整数</span>
+</span></span><span style="display:flex;"><span><span style="">如果输入整数（</span>scanf<span style="">）</span>
+</span></span><span style="display:flex;"><span>    <span style="">分析该数</span>
+</span></span><span style="display:flex;"><span>    <span style="">提示继续输入数字</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用户输入整数的过程以及确定是否是整数的过程可以放在一起通过while循环进行<code>while(scanf(&quot;%d&quot; ,&amp;num))</code></p>
+<p>求整数的约数，最容易想到的方式是</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-10-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (div <span style="color:#666">=</span> <span style="color:#40a070">2</span>; div <span style="color:#666">&lt;</span> num; div<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>(num <span style="color:#666">%</span> div <span style="color:#666">==</span> <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;%d &#34;</span>, div);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>继续思考一下，整数的约数时成对存在的，也就是说 <code>div</code> 的范围可以到 <code>num</code> 的平方根就结束（实际不用平方根，而用平方，因为整数运算速度快）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-11-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (div <span style="color:#666">=</span> <span style="color:#40a070">2</span>; div<span style="color:#666">*</span>div <span style="color:#666">&lt;=</span> num; div<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>(num <span style="color:#666">%</span> div <span style="color:#666">==</span><span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;%d %d &#34;</span>, div, num <span style="color:#666">/</span> div);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还有一个问题，如果输入的整数是一个完全平方数，平方根会输出两次，所以嵌套一个 if 语句用来判断</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-12-10">10</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (div <span style="color:#666">=</span> <span style="color:#40a070">2</span>; div<span style="color:#666">*</span>div <span style="color:#666">&lt;=</span> num; div<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>(num <span style="color:#666">%</span> div <span style="color:#666">==</span><span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>    {                               <span style="color:#60a0b0;font-style:italic">//花括号为了易读性，也防止忘加其他花括号
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">if</span>(num <span style="color:#666">/</span> div <span style="color:#666">!=</span> div)        <span style="color:#60a0b0;font-style:italic">//这里用 div *div = num  怎么样，是不是更好
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            printf(<span style="color:#4070a0">&#34;%d %d &#34;</span>, div, num <span style="color:#666">/</span> div);
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#06287e">printf</span>(<span style="color:#4070a0">&#34;%d &#34;</span>, div);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还有一个问题，要求中还有一条是当函数是素数时，需要向用户返回结果，但是上面的代码不能做到这种功能</p>
+<p>很明显，这可以通过查看进入 if 分支的次数（素数不会进入 if 分支）</p>
+<p>可以通过定义一个 int(_Bool)类型的值，在循环开始时，给它一个值 （1），在 if 分支中赋值为 0，这样如果为素数，该值便始终为 1，非素数该值会变为 0.</p>
+<p>有 <code>stdbool.h</code> 头文件可以使用 bool 代替 _Bool</p>
+<p>相同的逻辑，自己写了一个列出所有素数的程序</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-19"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-20"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-21"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-22"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-23"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-24"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-25"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-26"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-27"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-28"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-29"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-30"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-30">30</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-31"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-31">31</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-32"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-32">32</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-33"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-33">33</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-34"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-34">34</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-35"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-35">35</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-36"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-36">36</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-37"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-37">37</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-38"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-38">38</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-39"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-39">39</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-40"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-40">40</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-41"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-41">41</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-42"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-42">42</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-43"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-43">43</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-44"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-44">44</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-45"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-45">45</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-46"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-46">46</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-47"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-47">47</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-48"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-48">48</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-49"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-13-49">49</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*输出小于一个值的所有素数*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;string.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span><span style="color:#007020">&lt;stdbool.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> end;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> j <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">bool</span> isPrime;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> array[<span style="color:#40a070">100000</span>];         <span style="color:#60a0b0;font-style:italic">//定义一个数组，用来存储素数
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Enter the upper(q to quit):&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> (scanf(<span style="color:#4070a0">&#34;%d&#34;</span>, <span style="color:#666">&amp;</span>end))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        array[<span style="color:#40a070">0</span>] <span style="color:#666">=</span> <span style="color:#40a070">2</span>;           <span style="color:#60a0b0;font-style:italic">//第一个素数是 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">if</span> (end <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span>)
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#4070a0">&#34;自己想办法，输入大于4的数&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> order <span style="color:#666">=</span> <span style="color:#40a070">3</span>; order <span style="color:#666">&lt;=</span> end; order<span style="color:#666">++</span>)      <span style="color:#60a0b0;font-style:italic">// 数字从 3 开始，增加到指定的
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                isPrime <span style="color:#666">=</span> <span style="color:#007020">true</span>;         <span style="color:#60a0b0;font-style:italic">//每个量初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">for</span>(<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;=</span> j; i<span style="color:#666">++</span>)     
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#007020;font-weight:bold">if</span> (order <span style="color:#666">%</span> array[i] <span style="color:#666">==</span> <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        isPrime <span style="color:#666">=</span> <span style="color:#007020">false</span>;
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">if</span> (isPrime <span style="color:#666">==</span> <span style="color:#007020">true</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    j<span style="color:#666">++</span>;                    <span style="color:#60a0b0;font-style:italic">//素数加一
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                    array[j] <span style="color:#666">=</span> order;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">for</span>(<span style="color:#902000">int</span> k <span style="color:#666">=</span> <span style="color:#40a070">0</span>; k <span style="color:#666">&lt;=</span> j; k<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;%d &#34;</span>, array[k]);        <span style="color:#60a0b0;font-style:italic">//依次打印素数
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                <span style="color:#007020;font-weight:bold">if</span> ((k<span style="color:#666">+</span><span style="color:#40a070">1</span>) <span style="color:#666">%</span> <span style="color:#40a070">10</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    printf(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);               <span style="color:#60a0b0;font-style:italic">//每十个数字换行
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">Enter the upper(q to quit):&#34;</span>);       <span style="color:#60a0b0;font-style:italic">//换行
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="73-逻辑运算符">7.3 逻辑运算符</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">逻辑运算符</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">举例</th>
+<th style="text-align:center">iso646.h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">与</td>
+<td style="text-align:center">5&gt;2 &amp;&amp; 5&gt;3</td>
+<td style="text-align:center">and</td>
+</tr>
+<tr>
+<td style="text-align:center">||</td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">5&gt;2 || 4&gt;7</td>
+<td style="text-align:center">or</td>
+</tr>
+<tr>
+<td style="text-align:center">！</td>
+<td style="text-align:center">非</td>
+<td style="text-align:center">!(4&gt;7)</td>
+<td style="text-align:center">not</td>
+</tr>
+</tbody>
+</table>
+<p><code>!</code>的含义可以认为是 <code>!(true) = false</code> <code>!(false) = true</code> 这种的</p>
+<p>在一些键盘的布局中，没有 &amp; 这种的符号，所以 C 语言给了一个替代的方案，在 <code>iso646.h</code> 中，将 <code>&amp;&amp;</code> 别名为 and，<code>||</code> 别名为 or，<code>！</code>别名为 not。</p>
+<h3 id="732-优先级">7.3.2 优先级</h3>
+<p><code>!</code> 的优先级与递增运算符号相同，仅低于圆括号。<code>&amp;&amp;</code> 优先级高于 <code>||</code> 但是两者都比关系运算符 <code>&gt; &lt;</code> 低，但是高于赋值运算符</p>
+<p>比如 <code>a &gt; b &amp;&amp; b &gt; c || b &gt; d</code> 等价于 <code>((a &gt; b) &amp;&amp; (b &gt; c)) || (b &gt; d)</code> 当然，在实际运用中，更常用的是带有括号的一种，可以更明显的表现优先级</p>
+<h3 id="733-求值顺序">7.3.3 求值顺序</h3>
+<p>对于复杂的表达式 <code>anser = (3 + 4) * (6 + 7)</code>，C语言没有规定先计算前面的加法还是后面的加法，将选择权交给了编译器设置者。但是逻辑运算符并不是这样，逻辑运算符的表达式求值顺序是从左到右。同时 <code>&amp;&amp;</code>和<code>||</code> 都是序列点，也就是在进行右侧表达式判断之前，左侧表达式的副作用也已经生效了</p>
+<p>这是为了确保 <code>(c = getchar()) != ' ' &amp;&amp; c != '\n'</code> 这种的输入能够成立。同时也会有 <code>while( x++ &lt;10 &amp;&amp; x + y &lt; 20)</code> 后一个表达式中的 x 是递增过的</p>
+<p>对于 <code>&amp;&amp;</code> 由于测试是从左到右的，因此 C 语言规定了，如果左侧的表达式是 <code>false</code> 就不会去计算右侧的表达式了，也就是说 <code>x++ &gt; 10 &amp;&amp; y++ &gt; 20</code> 这种，如果前面表达式不成立，后面 y 不会递增</p>
+<h3 id="734-范围">7.3.4 范围</h3>
+<p><code>&amp;&amp;</code> 运算符可用于测试范围，比如 <code>range &gt;= 90 &amp;&amp; range &lt;= 100</code> 不能写成 90 &lt;= range &lt;= 100 这种，因为这等价于 <code>(90 &lt;= range) &lt;= 100</code> 也就相当于 <code>0 &lt;= 100</code> 或者 <code>1 &lt;= 100</code>，同时这并不是语法错误，所以编译器可能不提示</p>
+<p>对于测试一个字符是不是小写字母，理论上可以用 <code>ch &gt;= 'a' &amp;&amp; ch &lt;= 'z'</code>，但是这种计算只用于 ASCII 字符编码，对于其他编码不一定合适。所以最佳的方法是使用 <code>ctype.h</code> 中的 <code>islower</code> 函数</p>
+<h2 id="74-设计一个统计单词数的函数">7.4 设计一个统计单词数的函数</h2>
+<p>需求：统计单词的数量（读取并报告单词的数量），同时计算字母数和行数</p>
+<p>问题（思路）：</p>
+<ol>
+<li>
+<p>结束的标志</p>
+<p>因为需要将换行符用于处理有几行，所以不能直接用换行符标志输入的结束，所以可以使用不常用的 <code>|</code> 标志输入结束，并将其定义为明示常量 <code>STOP</code></p>
+</li>
+<li>
+<p>识别单词</p>
+<p>单词定义为一个不含空白的（空格、制表符、换行符）字符序列，从非空白开始，到空白结束</p>
+<p>使用 <code>c != ' '  &amp;&amp; c != '\n' &amp;&amp; c != '\t'</code> 来判断单词是否结束，其实也能用 <code>ctype.h</code> 中的 <code>isspace</code> 函数更简单</p>
+</li>
+<li>
+<p>避免重复计数单词</p>
+<p>可以使用一个 bool 类型的量用来标记单词，比如 <code>inword</code> 当读取到第一个非字符单词时，让单词数加一，并将 <code>inword = 1</code>。如果 <code>inword == 0</code>，读取到非空白时单词数加一，如果 <code>inword == 1</code>，则不加一</p>
+</li>
+<li>
+<p>布尔变量的使用</p>
+<p>当使用 <code>bool</code> 类型的变量时，在判断时，可以用 <code>if(inword)</code> 或者 <code>if(!inword)</code> 代替 <code>if (inword == 1)</code>，其中前者更常用</p>
+</li>
+</ol>
+<h2 id="75-条件运算符">7.5 条件运算符(?:)</h2>
+<p><strong>条件表达式</strong> <em><strong>(conditional expression)</strong></em> 使用<strong>条件运算符</strong> <code>? :</code></p>
+<p>该运算符需要 3 个运算对象，通过<code>?</code> <code>:</code>分割开，称为三元运算符</p>
+<p>通用陈述</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-14-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>expression1 <span style="color:#666">?</span> <span style="color:#002070;font-weight:bold">expression2</span> : expression3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>意为，如果 <code>expression1</code> 为 <code>true</code>，则该表达式等价于 <code>expression2</code>，否则该表达式等价于 <code>expression3</code></p>
+<p>条件运算符的优先级高于<strong>赋值运算符</strong></p>
+<p>举例</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-15-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span>max <span style="color:#666">=</span> (a <span style="color:#666">&gt;</span> b) <span style="color:#666">?</span> <span style="color:#002070;font-weight:bold">a</span> : b
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就是将 a、b 中的更大值赋值给 max</p>
+<p>这种和 if else 是等价的，但是会更简洁更紧凑</p>
+<h2 id="76-循环辅助continue-和-break">7.6 循环辅助：continue 和 break</h2>
+<p>continue 和 break 语句可以根据测试结果，忽略一部分循环，甚至直接结束循环</p>
+<h3 id="761-continue-语句">7.6.1 continue 语句</h3>
+<p>三种循环都可以使用 <code>continue</code> 语句，执行该语句会跳过本次循环剩余部分，开始下一次循环测试，仅跳过循环体。当存在嵌套循环时，仅跳过一层循环</p>
+<p>在 <code>7.9.skippart.c</code> 中的求一系列数据的最大最小值时，其赋予最大值用来比较的初始是 下限，用来比较的最小值是 上限。这是很好的处理技巧</p>
+<p>continue 存在的原因是为了不要让 if 或者 else 下面的 statement 太长，长段的缩进在语句较长和嵌套较多时，会影响可读性</p>
+<p>continue也可以用于占位，比如一个循环读取输入，但是什么都不做，仅当换行时退出循环。这种的 while 循环如果使用空语句会难以发现，所以用 continue； 就比较方便</p>
+<p><strong>注意</strong>：如果使用continue没有简化代码就不要用</p>
+<p><strong>注意</strong>：在 for 循环中，continue之后会执行第三条语句然后判断表达式。而相等价的 while 语句，会把递增语句放到循环体中被跳过</p>
+<p><strong>注意</strong>：<code>while (getchar() != '\n')  continue;</code> 这种代码可以让队列中非换行符全部被消耗，相当于空语句</p>
+<h3 id="762-break-语句">7.6.2 break 语句</h3>
+<p>break 与 continue 的区别在于，continue 是跳过本次循环，break 是结束整个循环。比如在 <code>7.9.skippart.c</code> 中，如果把 continue 替换成 break 会当输入大于 100 的值时，相当于输入了 q</p>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/20/20221120164646.png" alt="break和continue"></p>
+<p>break 还能用于其他情况退出的循环，比如计算面积时，输入值为非数字</p>
+<p><strong>注意</strong>：如果使用break会更复杂就不要用，尽量将判断条件集中在判断式上</p>
+<p>在 if 循环中，由于 break 是直接结束循环，也不会再次执行第三个语句（一般是递增语句）。对于嵌套循环，如果想要退出两个循环，一般需要两次判断之后分别 break（连着两个 break 后面的会被跳过）</p>
+<p>break 还能用于 switch 中，continue 不能用于</p>
+<h2 id="77-多重选择switch-和-break">7.7 多重选择：switch 和 break</h2>
+<p>if else 很容易编写二选一的程序，但是很多程序不只是二选一，这个时候，switch 语句会更方便，而非多层 if else if else if，这样很乱</p>
+<p>用法举例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-19"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-20"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-21"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-22"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-23"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-24"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-25"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-26"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-27"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-28"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-29"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-30"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-30">30</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-31"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-31">31</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-32"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-32">32</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-33"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-33">33</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-34"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-34">34</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-35"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-35">35</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-36"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-36">36</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-37"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-37">37</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-38"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-38">38</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-39"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-39">39</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-40"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-40">40</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-41"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-41">41</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-42"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-42">42</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-43"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-43">43</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-44"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-44">44</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-45"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-45">45</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-46"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-46">46</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-47"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-47">47</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-48"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-16-48">48</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* animals.c -- uses a switch statement */</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;ctype.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">char</span> ch;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Give me a letter of the alphabet, and I will give &#34;</span>);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;an animal name</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">beginning with that letter.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Please type in a letter; type # to end my act.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> ((ch <span style="color:#666">=</span> getchar()) <span style="color:#666">!=</span> <span style="color:#4070a0">&#39;#&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span>(<span style="color:#4070a0">&#39;\n&#39;</span> <span style="color:#666">==</span> ch)          <span style="color:#60a0b0;font-style:italic">//反这些防止少些一个等于号
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#007020;font-weight:bold">continue</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> (islower(ch))     <span style="color:#60a0b0;font-style:italic">/* lowercase only          */</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">switch</span> (ch)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;a&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;argali, a wild sheep of Asia</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;b&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;babirusa, a wild pig of Malay</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;c&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;coati, racoonlike mammal</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;d&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;desman, aquatic, molelike critter</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;e&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;echidna, the spiny anteater</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;f&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;fisher, brownish marten</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">default</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>                printf(<span style="color:#4070a0">&#34;That&#39;s a stumper!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>        }                <span style="color:#60a0b0;font-style:italic">/* end of switch           */</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#4070a0">&#34;I recognize only lowercase letters.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">while</span> (getchar() <span style="color:#666">!=</span> <span style="color:#4070a0">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">continue</span>;      <span style="color:#60a0b0;font-style:italic">/* skip rest of input line */</span>
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#4070a0">&#34;Please type another letter or a #.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }                        <span style="color:#60a0b0;font-style:italic">/* while loop end          */</span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#4070a0">&#34;Bye!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="771-switch-语句">7.7.1 switch 语句</h3>
+<p>switch 语句对 switch 后面的圆括号中的表达式求值。然后程序会扫描标签（<code>case 'a' :</code>、<code>case 'b' :</code>）这种都称之为标签。switch 查找的标签是跟在 switch 后面的花括号中的标签，且对应的是 case 后面的值与 switch 圆括号中的表达式的值相同时</p>
+<p>switch的本质（通用用法）：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-17-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span>( <span style="">整形表达式</span> )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="">常量</span><span style="color:#40a070">1</span><span style="color:#666">:</span> <span style="">语句</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="">常量</span><span style="color:#40a070">2</span><span style="">：语句</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">default</span> <span style="">：</span> <span style="">语句</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中的 case 常量加冒号(:)以及 default： 称之为标签。</p>
+<p>switch 语句的实际运用就是对括号中的表达式求值（一般就是整数），然后跳转到对应的<strong>标签</strong>处。如果没有符合的标签，就跳转到 default，这些都是可选的。没有default会直接跳过</p>
+<p>一般来说，在对应标签的语句下面都有 break 语句，用来跳出下面对应其他标签对应的语句</p>
+<h4 id="有没有break的区别">有没有break的区别</h4>
+<p><img src="https://raw.githubusercontent.com/whwh13/picgo/master/2022/11/21/20221121110212.png" alt="switch中有break和没有break的程序流"></p>
+<p>其实如果 switch 语句在循环中，continue 也会跳过其他部分，进入下一次循环，达到类似 continue 的作用</p>
+<ul>
+<li>
+<p>C语言的 case 一般只能指定一个值，不能指定范围。</p>
+</li>
+<li>
+<p>switch 在圆括号中的表达式的值应该是一个整数值（含 char）。case 标签必须是整数类型的常量或是常量表达式（表达式中只含有整型常量，不含有变量），不能使用变量（即便是等于常量的变量）。</p>
+</li>
+<li>
+<p>同一个 switch 中标签不能重复（浮点数精度不容易控制，所以没有）</p>
+</li>
+</ul>
+<h3 id="772-只读每行的首字符">7.7.2 只读每行的首字符</h3>
+<p>通过下列的代码能够实现一行只读取首字母</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-18-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-18-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (getchar() <span style="color:#666">!=</span> <span style="color:#4070a0">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">continue</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个代码的作用是循环读取字符并丢弃，直到换行（终端中确定），回到主程序</p>
+<h3 id="773-多重标签">7.7.3 多重标签</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-19-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-19-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-19-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-19-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-19-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;e&#39;</span> <span style="color:#666">:</span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;E&#39;</span> <span style="color:#666">:</span>  e_ct<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;a&#39;</span> <span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#39;A&#39;</span> <span style="color:#666">:</span>  a_ct<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">break</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在一个语句之前可以添加多个标签，也不用换行或空格（最好有）。其本质是，当 switch 识别到标签时就会跳转到对应语句。而前面的标签没有 break 就会执行下一个语句</p>
+<ul>
+<li>
+<p>在一些时候 default 会只有break语句，最后一个 case 理论上就不用 break 了。但是，为了以后的拓展性还是加上为好</p>
+</li>
+<li>
+<p>当然上面如果使用 <code>ctype.h</code> 中的 <code>toupper</code> 就可以避免多重标签，将小写字母转换成大写字母</p>
+</li>
+</ul>
+<h3 id="774-switch-与-if-else">7.7.4 switch 与 if else</h3>
+<p>如果根据浮点数的判断，或者是某个范围，只能使用 if else。而对于具有多个不同选择的选择，switch 效率更高</p>
+<h2 id="78-goto-语句">7.8 goto 语句</h2>
+<p>goto 语句的模式是</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-20-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-20-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-20-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-20-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">goto</span> <span style="">标签名；</span>
+</span></span><span style="display:flex;"><span><span style="">···</span>
+</span></span><span style="display:flex;"><span><span style="">···</span>
+</span></span><span style="display:flex;"><span><span style="">标签名</span><span style="color:#666">:</span> statement
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>goto 后面应该跟着标签名，同时应该有一个有着对应标签的语句。在运行 goto 之后，跳转到标签标记的语句</p>
+<p>标签名的命名规则与变量名相同。以字母或下划线开头，包含数字、字母、下划线</p>
+<p>goto 语句易被滥用，所以应该谨慎使用最好不用</p>
+<h3 id="781-避免使用-goto">7.8.1 避免使用 goto</h3>
+<p>C语言中完全不必要使用 goto，有些人有 basic 或 fortran 经验，会经常使用 goto。但是，使用 goto 会让程序杂乱无章，应该尽量避免。常用替换方案：</p>
+<ul>
+<li>处理包含多条语句的if语句</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-21-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (size <span style="color:#666">&gt;</span> <span style="color:#40a070">12</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">goto</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">goto</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">a</span>: cost <span style="color:#666">=</span> cost <span style="color:#666">*</span> <span style="color:#40a070">1.05</span>;
+</span></span><span style="display:flex;"><span>flag <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">b</span>: bill <span style="color:#666">=</span> cost <span style="color:#666">*</span> flag;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是因为在 basic 和 fortran 中只有紧跟 if 的语句才属于 if</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-22-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (size <span style="color:#666">&gt;</span> <span style="color:#40a070">12</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cost <span style="color:#666">=</span> cost <span style="color:#666">*</span> <span style="color:#40a070">1.05</span>;
+</span></span><span style="display:flex;"><span>    flag <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>bill <span style="color:#666">=</span> cost <span style="color:#666">*</span> flag;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>二选一</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-23-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (ibex <span style="color:#666">&gt;</span> <span style="color:#40a070">14</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">goto</span> a;
+</span></span><span style="display:flex;"><span>sheds <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">goto</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">a</span>: sheds <span style="color:#666">=</span> <span style="color:#40a070">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">b</span>: help <span style="color:#666">=</span> <span style="color:#40a070">2</span> <span style="color:#666">*</span> sheds;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>新版 basic 和 fortran 已经加入了 else</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-24-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-24-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-24-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-24-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-24-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (ibox <span style="color:#666">&gt;</span> <span style="color:#40a070">14</span>)
+</span></span><span style="display:flex;"><span>    sheds <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    sheds <span style="color:#666">=</span> <span style="color:#40a070">3</span>;
+</span></span><span style="display:flex;"><span>help <span style="color:#666">=</span> <span style="color:#40a070">2</span> <span style="color:#666">*</span> sheds;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>创建不确定循环</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-25-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">readin</span>: scanf(<span style="color:#4070a0">&#34;%d&#34;</span>, <span style="color:#666">&amp;</span>score);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (score <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">goto</span> stage2;
+</span></span><span style="display:flex;"><span>lots of statement
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">goto</span> readin;
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">stage2</span>: more stuff;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>C语言可以用 while 函数替代</p>
+<ul>
+<li>
+<p>跳至循环末尾，开启下一次迭代（continue）</p>
+</li>
+<li>
+<p>跳出循环（break）</p>
+</li>
+</ul>
+<p>break 和 continue 是 goto 的特殊形式。同时不用使用标签，可以防止标签误用</p>
+<ul>
+<li>随便跳转</li>
+</ul>
+<p>不要这样用，会破坏程序逻辑和结构</p>
+<p>当然，goto 有其存在的必要性，在嵌套循环中，break 只能跳出一层循环，而 goto 可以跳转到其他循环，用起来更加方便</p>
+<p>其实 C 语言的 goto 函数比其他语言的 goto 更方便，但是还是，不熟悉不要用</p>
+    </div>
+
+    
+    
+
+
+
+    
+    
+
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+        </div>
+
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/record/">
+            <span class="next-text nav-default">记录一些小教程</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2022
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        whwh13
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var remark_config = {
+    host: 'https:\/\/remark42.example.com',
+    site_id: 'remark',
+    components: [
+	    'embed',
+    ],
+  }
+  !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

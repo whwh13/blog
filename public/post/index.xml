@@ -6,15 +6,26 @@
     <description>Recent content in Posts on whwh&#39;s blog for self</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Nov 2022 09:58:51 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Nov 2022 15:47:05 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>/post/test/</link>
-      <pubDate>Sun, 20 Nov 2022 09:58:51 +0800</pubDate>
+      <title>C语言第七章 C控制语句：分支和跳转</title>
+      <link>/post/c_chapter7/</link>
+      <pubDate>Mon, 21 Nov 2022 15:47:05 +0800</pubDate>
       
-      <guid>/post/test/</guid>
-      <description>&lt;h3 id=&#34;for-test&#34;&gt;For test&lt;/h3&gt;
-&lt;p&gt;soon delete&lt;/p&gt;</description>
+      <guid>/post/c_chapter7/</guid>
+      <description>&lt;h2 id=&#34;71-if-语句&#34;&gt;7.1 if 语句&lt;/h2&gt;
+&lt;p&gt;if 语句被称为&lt;strong&gt;分支语句(branching statement)&lt;strong&gt;或者&lt;/strong&gt;选择语句(selection statement)&lt;/strong&gt;，相当于一个交叉点，程序需要在两条分支中选择一条，通用形式是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-2&#34;&gt;&lt;a style=&#34;outline: none; text-decoration:none; color:inherit&#34; href=&#34;#hl-0-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;if&lt;/span&gt; (expression)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    statement
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果对 &lt;code&gt;expression&lt;/code&gt; 求值为真，则执行 &lt;code&gt;statement&lt;/code&gt;，否则跳过 &lt;code&gt;statement&lt;/code&gt;。&lt;code&gt;statement&lt;/code&gt; 可以是简单语句或复合语句。与 &lt;code&gt;while&lt;/code&gt; 相比，&lt;code&gt;if&lt;/code&gt; 的 &lt;code&gt;statement&lt;/code&gt; 只会执行一次。即使 &lt;code&gt;if&lt;/code&gt; 由复合语句组成，仍然被视为一条语句&lt;/p&gt;</description>
     </item>
     
     <item>
