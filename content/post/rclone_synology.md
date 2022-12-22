@@ -91,7 +91,7 @@ set https_proxy=http://127.0.0.1：port
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 REMOTE='googledrive:video'
-LOCAL='/volume2/Rclone/google'
+LOCAL='/volume3/Rclone/google'
 CONFIG='/root/.config/rclone/rclone.conf'
 DEMO='rclone'
 
@@ -123,6 +123,23 @@ start)
   ;;
 stop)
   DEMOPID="$(ps -C $DEMO -o pid= |head -n1 |grep -o '[0-9]\{1,\}')"
+  [ -z "$DEMOPID" ] && echo "$DEMO not running."
+  [ -n "$DEMOPID" ] && kill -9 $DEMOPID >/dev/null 2>&1
+  [ -n "$DEMOPID" ] && echo "$DEMO is stopped.[$DEMOPID]"
+  fusermount -zuq $LOCAL >/dev/null 2>&1
+  ;;
+init)
+  fusermount -zuq $LOCAL
+  rm -rf $LOCAL;
+  mkdir -p $LOCAL;
+  chmod a+x $0;
+  update-rc.d -f $(basename $0) remove;
+  update-rc.d -f $(basename $0) defaults;
+  rclone config;
+  ;;
+esac
+ 
+exit 0
 ```
 
 运行之后发现仍然不行，报错为"rclone start fail!"
