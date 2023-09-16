@@ -44,7 +44,9 @@
       
       <guid>/post/record/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://docs.zerotier.com/devices/synology/&#34;&gt;群晖使用zerotier通过docker&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_37605642/article/details/120095240&#34;&gt;linux查找文件&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_37605642/article/details/120095240&#34;&gt;linux查找文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;thunderbird使用ustc邮箱：
+所以如果需要使用 Thunderbird 从 mail.ustc.edu.cn 收发邮件，需要做以下的配置：Edit -&amp;gt; Settings，在 &amp;ldquo;General&amp;rdquo; 中拖到最下面选择 &amp;ldquo;Config Editor&amp;hellip;&amp;quot;。在新弹出的高级配置的标签中输入 utf8，将 &lt;code&gt;mail.server.default.allow_utf8_accept&lt;/code&gt; 的值从 true 改成 false。这个设置不会影响其他邮箱的使用。&lt;/p&gt;</description>
     </item>
     
     <item>

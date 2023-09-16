@@ -30,4 +30,7 @@ mathjax: false
 [群晖使用zerotier通过docker](https://docs.zerotier.com/devices/synology/)
 
 [linux查找文件](https://blog.csdn.net/m0_37605642/article/details/120095240)
+
+thunderbird使用ustc邮箱：
+所以如果需要使用 Thunderbird 从 mail.ustc.edu.cn 收发邮件，需要做以下的配置：Edit -> Settings，在 "General" 中拖到最下面选择 "Config Editor..."。在新弹出的高级配置的标签中输入 utf8，将 `mail.server.default.allow_utf8_accept` 的值从 true 改成 false。这个设置不会影响其他邮箱的使用。
 <!--more-->
